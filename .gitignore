@@ -13,3 +13,4 @@ yarn-error.log
 .cpanel.yml
 .htaccess
 routes.txt
+.well-known
