@@ -217,7 +217,7 @@ return [
 
         'Ably' => Ably\Laravel\Facades\Ably::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        //'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
