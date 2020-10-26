@@ -2,7 +2,7 @@
 @section('contentGame')
 
     <section class="content-game">
-        <span id="name-user" data-name="{{ Auth::user()->name }}"></span>
+        <span id="name-user" data-name="{{ auth()->user()->name }}"></span>
         <div id="block-pieces" style="display: none;">
             <img src="{{ url('img/balon.png') }}" alt="" id="piece-ball-origin" class="goal" style="width: 100%;">
             <img src="{{ url('img/j15.png') }}" alt="" id="piece-hw-origin" data-color="1" class="ispiece piece-w" style="width: 100%;" draggable="true">
@@ -32,9 +32,9 @@
         </section>
     </section>
     <style>
-        [draggable] {
-            cursor: pointer;
-        }
+      [draggable] {
+        cursor: pointer;
+      }
     </style>
     <script>
       window.onload = function() {
@@ -79,9 +79,9 @@
             }
 
             ui.draggable.
-                removeClass('ui-draggable ui-draggable-handle').
-                css('top', '0').
-                css('left', '0');
+              removeClass('ui-draggable ui-draggable-handle').
+              css('top', '0').
+              css('left', '0');
 
             console.log('nodeChild', $(this), $(this).children().length);
 

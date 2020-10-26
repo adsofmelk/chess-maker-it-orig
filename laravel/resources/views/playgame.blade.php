@@ -5,7 +5,7 @@
 
 @section('contentGame')
     <section class="content-game">
-        <span id="name-user" data-name="{{ Auth::user()->name }}"></span>
+        <span id="name-user" data-name="{{ auth()->user()->name }}"></span>
         <div id="block-pieces" style="display: none;">
             <img src="{{ url('img/balon.png') }}" alt="" id="piece-ball-origin" class="ispiece goal" style="width: 100%;">
             <img src="{{ url('img/j15.png') }}" alt="" id="piece-hw-origin" data-color="1" class="ispiece piece-w" style="width: 100%;"
@@ -22,7 +22,7 @@
                  draggable="true">
             <div class="block-ui" id="blockui-board-origin"></div>
         </div>
-        <div id="app" name-user="{{ Auth::user()->name }}">
+        <div id="app" name-user="{{ auth()->user()->name }}">
             <game-init pre-game="{{$preGame}}"></game-init>
         </div>
         <section id="app-game" class="" v-show="chat">

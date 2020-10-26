@@ -2,7 +2,7 @@
 	@section('contentGame')
 
 		<section class="content-game">
-			<span id="name-user" data-name="{{ Auth::user()->name }}"></span>
+			<span id="name-user" data-name="{{ auth()->user()->name }}"></span>
 			<div id="block-pieces" style="display: none;">
 				<img src="{{ url('img/balon.png') }}" alt="" id="piece-ball" class="ispiece goal" style="width: 100%;">
 				<img src="{{ url('img/j15.png') }}" alt="" id="piece-hw" data-color="1" class="ispiece" style="width: 100%;" draggable="true" ondragstart="window.drag(event)">
