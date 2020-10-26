@@ -16,28 +16,28 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <p>Puntaje <strong>ELO-IT</strong> actual es <strong class="">{{Auth::User()->rating}}</strong>
+                        <p>Puntaje <strong>ELO-IT</strong> actual es <strong class="">{{auth()->user()->rating}}</strong>
                         </p>
                         <hr>
-                        <p class="font-weight-bold">Resumen de partidas ({{Auth::User()->game_count}})</p>
+                        <p class="font-weight-bold">Resumen de partidas ({{auth()->user()->game_count}})</p>
 
                         <section class="resume-game text-center">
                             <article class="box-info-game">
                                 <span class="boxig-title badge-success">Victorias</span>
                                 <div class="boxig-value text-success">
-                                    <span>{{Auth::User()->game_win}}</span>
+                                    <span>{{auth()->user()->game_win}}</span>
                                 </div>
                             </article>
                             <article class="box-info-game">
                                 <span class="boxig-title badge-danger">Derrotas</span>
                                 <div class="boxig-value text-danger">
-                                    <span>{{Auth::User()->game_lose}}</span>
+                                    <span>{{auth()->user()->game_lose}}</span>
                                 </div>
                             </article>
                             <article class="box-info-game">
                                 <span class="boxig-title text-white badge-warning">Empates</span>
                                 <div class="boxig-value text-warning">
-                                    <span>{{Auth::User()->game_empates}}</span>
+                                    <span>{{auth()->user()->game_empates}}</span>
                                 </div>
                             </article>
                         </section>
@@ -50,15 +50,15 @@
                             <div class="alert alert-success success" style="display: none;"></div>
                             <div class="mb-3 row">
                                 <div class="col-lg-3">
-                                    @if(Auth::user()->avatar)
-                                        @if(strpos(Auth::user()->avatar, 'http') === false)
-                                            <img src="photosuser/{{ Auth::user()->avatar }}" alt="Avatar {{ Auth::user()->name }}" class="img mr-2">
+                                    @if(auth()->user()->avatar)
+                                        @if(strpos(auth()->user()->avatar, 'http') === false)
+                                            <img src="photosuser/{{ auth()->user()->avatar }}" alt="Avatar {{ auth()->user()->name }}" class="img mr-2">
                                         @else
-                                            <img src="{{ Auth::user()->avatar }}" alt="Avatar {{ Auth::user()->name }}" class="img mr-2">
+                                            <img src="{{ auth()->user()->avatar }}" alt="Avatar {{ auth()->user()->name }}" class="img mr-2">
                                         @endif
                                     @else
                                         <img src="{{ url('photosuser/avatar_default.jpg') }}"
-                                             alt="Avatar {{ Auth::user()->name }}" class="img mr-2">
+                                             alt="Avatar {{ auth()->user()->name }}" class="img mr-2">
                                     @endif
                                 </div>
                                 <div class="col-lg-6" style="max-width:160px;">
@@ -75,12 +75,12 @@
                             <div class="form-group">
                                 <label for="txtnombre">Nombre</label>
                                 <input class="form-control" type="text" name="nombre" id="txtnombre"
-                                       value="{{Auth::user()->name}}" required>
+                                       value="{{auth()->user()->name}}" required>
                             </div>
                             <div class="form-group">
                                 <label for="txtcorreo">Email</label>
                                 <input class="form-control" type="text" name="correo" id="txtcorreo"
-                                       value="{{Auth::user()->email}}" required>
+                                       value="{{auth()->user()->email}}" required>
                             </div>
                             <div class="text-right">
                                 <button type="submit" class="btn btn-primary">
