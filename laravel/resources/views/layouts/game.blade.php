@@ -63,21 +63,21 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false" v-pre>
-                                @if(Auth::user()->avatar)
-                                    @if(strpos(Auth::user()->avatar, 'http') === false)
-                                        <img src="photosuser/{{ Auth::user()->avatar }}" alt="Avatar {{ Auth::user()->name }}" class="img-avatar mr-2">
+                                @if(auth()->user()->avatar)
+                                    @if(strpos(auth()->user()->avatar, 'http') === false)
+                                        <img src="photosuser/{{ auth()->user()->avatar }}" alt="Avatar {{ auth()->user()->name }}" class="img-avatar mr-2">
                                     @else
-                                        <img src="{{ Auth::user()->avatar }}" alt="Avatar {{ Auth::user()->name }}" class="img-avatar mr-2">
+                                        <img src="{{ auth()->user()->avatar }}" alt="Avatar {{ auth()->user()->name }}" class="img-avatar mr-2">
                                     @endif
                                 @else
                                     <img src="{{ url('photosuser/avatar_default.jpg') }}"
-                                         alt="Avatar {{ Auth::user()->name }}" class="img-avatar mr-2">
+                                         alt="Avatar {{ auth()->user()->name }}" class="img-avatar mr-2">
                                 @endif
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ auth()->user()->name }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                @if(Auth::user()->admin==1)
+                                @if(auth()->user()->admin==1)
                                     <a href="{{route('panel')}}" class="dropdown-item">
                                         <i class="fa fa-address-card mr-2"></i>
                                         <span>Panel</span>

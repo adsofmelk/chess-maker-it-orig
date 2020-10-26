@@ -88,14 +88,14 @@
 									 m-dropdown-toggle="click">
 										<a href="#" class="m-nav__link m-dropdown__toggle">
 											<span class="m-topbar__userpic">
-												@if(Auth::user()->avatar)
-													@if(strpos(Auth::user()->avatar, 'http') === false)
-														<img src="photosuser/{{ Auth::user()->avatar }}" alt="Avatar {{ Auth::user()->name }}" class="img-avatar mr-2">
+												@if(auth()->user()->avatar)
+													@if(strpos(auth()->user()->avatar, 'http') === false)
+														<img src="photosuser/{{ auth()->user()->avatar }}" alt="Avatar {{ auth()->user()->name }}" class="img-avatar mr-2">
 													@else
-														<img src="{{ Auth::user()->avatar }}" alt="Avatar {{ Auth::user()->name }}" class="img-avatar mr-2">
+														<img src="{{ auth()->user()->avatar }}" alt="Avatar {{ auth()->user()->name }}" class="img-avatar mr-2">
 													@endif
 												 @else
-												<img src="{{ url('photosuser/avatar_default.jpg') }}" alt="Avatar {{ Auth::user()->name }}" class="img-avatar mr-2">
+												<img src="{{ url('photosuser/avatar_default.jpg') }}" alt="Avatar {{ auth()->user()->name }}" class="img-avatar mr-2">
 												 @endif
 											</span>
 										</a>
