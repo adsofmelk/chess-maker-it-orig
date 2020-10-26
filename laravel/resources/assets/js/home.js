@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function() {
   window.ablyapp = new Ably.Realtime({
     authUrl: 'authhallwait',
   });
@@ -40,11 +40,11 @@ window.onload = function () {
         // console.log('There are ' + members.length + ' members on this channel', members);
         // console.log('The first member has client ID: ' + members[0].clientId);
         let html = '';
-        for (var i in members) {
+        for (let i in members) {
           if (members[i].clientId != ablyapp.auth.clientId) {
             let elemNew = templateRow.replace(/:idplayer:/g, members[i].clientId).
-                replace(':name:', members[i].data.user).
-                replace(':score:', members[i].data.score);
+              replace(':name:', members[i].data.user).
+              replace(':score:', members[i].data.score);
             html = html + elemNew;
             // $('#section-users').append('<p id="' + members[i].clientId + '">' + members[i].data.user + ', ' + members[i].data.score + ' <a class="btn-retar" data-idplayer="' + members[i].clientId + '">Retar</a></p>');
           }
@@ -84,24 +84,28 @@ window.onload = function () {
       });
 
       channelHall.subscribe('challenger', function(message) {
-        // console.log(message)
+        console.log(message, ablyapp.auth.clientId);
         if (message.data.status == 1 && message.data.retador != ablyapp.auth.clientId && message.data.me == ablyapp.auth.clientId) {
           askAcceptChallenge({
             name: message.data.name,
             retador: message.data.retador,
           });
+          console.log('entra a status 1');
         }
 
         if (message.data.status == 2 && message.data.retador == ablyapp.auth.clientId) {
+          console.log('entra a status 2');
           cleanWaitGame();
           bootbox.hideAll();
         }
 
         if (message.data.status == 3 && message.data.retador != ablyapp.auth.clientId && message.data.me == ablyapp.auth.clientId) {
+          console.log('entra a status 3');
           bootbox.hideAll();
         }
 
         if (message.data.status == 4 && message.data.retador == ablyapp.auth.clientId) {
+          console.log('entra a status 4');
           cleanWaitGame();
           bootbox.hideAll();
           checkPresencia();
@@ -159,10 +163,10 @@ window.onload = function () {
         axios.post('creategamechallenge', {
           user: params.retador,
         }).then(function() {
-          location.href = 'playgame';
           acceptChallenge({
             retador: params.retador,
           });
+          location.href = 'playgame';
         });
       } else {
         rejectChallenge({

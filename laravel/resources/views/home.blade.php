@@ -4,8 +4,8 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <span id="name-user" data-name="{{ Auth::user()->name }}"></span>
-                    <span id="score-user" data-score="{{ Auth::user()->rating }}"></span>
+                    <span id="name-user" data-name="{{ auth()->user()->name }}"></span>
+                    <span id="score-user" data-score="{{ auth()->user()->rating }}"></span>
                     <div class="card-header">
                         <span>Bienvenido a ChessMakeIt</span>
                     </div>
@@ -16,27 +16,27 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <p>Puntaje <strong>ELO-IT</strong> actual es <strong class="">{{Auth::User()->rating}}</strong></p>
+                        <p>Puntaje <strong>ELO-IT</strong> actual es <strong class="">{{ auth()->User()->rating }}</strong></p>
                         <hr>
-                        <p class="font-weight-bold">Resumen de partidas ({{Auth::User()->game_count}})</p>
+                        <p class="font-weight-bold">Resumen de partidas ({{ auth()->User()->game_count }})</p>
 
                         <section class="resume-game text-center">
                             <article class="box-info-game">
                                 <span class="boxig-title badge-success">Victorias</span>
                                 <div class="boxig-value text-success">
-                                    <span>{{Auth::User()->game_win}}</span>
+                                    <span>{{ auth()->User()->game_win }}</span>
                                 </div>
                             </article>
                             <article class="box-info-game">
                                 <span class="boxig-title badge-danger">Derrotas</span>
                                 <div class="boxig-value text-danger">
-                                    <span>{{Auth::User()->game_lose}}</span>
+                                    <span>{{ auth()->User()->game_lose }}</span>
                                 </div>
                             </article>
                             <article class="box-info-game">
                                 <span class="boxig-title text-white badge-warning">Empates</span>
                                 <div class="boxig-value text-warning">
-                                    <span>{{Auth::User()->game_empates}}</span>
+                                    <span>{{ auth()->User()->game_empates }}</span>
                                 </div>
                             </article>
                         </section>

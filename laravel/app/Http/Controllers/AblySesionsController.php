@@ -11,6 +11,7 @@ use App\GamesTemp as PreGame;
 
 use App\Traits\ChessTrait;
 
+use Illuminate\Support\Str;
 use Session;
 use Ably;
 use Illuminate\Support\Facades\Log;
@@ -92,7 +93,7 @@ class AblySesionsController extends Controller
             }
 
 
-            $nameChannel = 'channel_'.str_random(10);
+            $nameChannel = 'channel_'.Str::random(10);
 
             AblySession::create([
                 'channel_ably' => $nameChannel,
@@ -132,7 +133,7 @@ class AblySesionsController extends Controller
             $channelBefore->delete();
         }
 
-        $nameChannel = 'channel_'.str_random(10);
+        $nameChannel = 'channel_'.Str::random(10);
 
         AblySession::create([
             'channel_ably' => $nameChannel,
@@ -190,7 +191,7 @@ class AblySesionsController extends Controller
         } else {
             $otherUser = Ably::channel($hall_user->channel)->presence->get();
 
-            $nChannelGame = str_random(10);
+            $nChannelGame = Str::random(10);
             $distribution = $this->getDistribution();
 
             if (!empty($otherUser->items)) {

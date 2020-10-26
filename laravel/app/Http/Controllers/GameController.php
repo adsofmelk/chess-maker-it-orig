@@ -11,6 +11,7 @@ use App\HallsWait as HallsWait;
 use App\Partidas as Game;
 use App\GamesTemp as PreGame;
 use App\SessionesAbly as AblySession;
+use Illuminate\Support\Str;
 use Session;
 use Ably;
 
@@ -1155,7 +1156,7 @@ class GameController extends Controller
     {
         $userRetador = User::where('email', decrypt($request->input('user')))->first()->id;
         
-        $nChannelGame = str_random(10);
+        $nChannelGame = Str::random(10);
         $distribution = $this->getDistribution();
         
         $whoBegin = [$userRetador, $request->user()->id];

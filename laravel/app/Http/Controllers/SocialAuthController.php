@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Socialite;
 use App\User;
 
@@ -43,7 +44,7 @@ class SocialAuthController extends Controller
     			'name'       => $aUserSocial->name,
     			'email'      => $aUserSocial->email,
     			'avatar'     => $aUserSocial->avatar,
-    			'password'   => str_random(16),
+    			'password'   => Str::random(16),
     			'type_auth'  => $type_red,
     			'id_profile' => $aUserSocial->id,
     		]);
@@ -54,7 +55,7 @@ class SocialAuthController extends Controller
     			'name'       => $aUserSocial->name,
     			'email'      => $aUserSocial->email,
     			'avatar'     => $aUserSocial->avatar,
-    			'password'   => str_random(16),
+    			'password'   => Str::random(16),
     			'type_auth'  => 'local - '.$type_red,
     			'id_profile' => $aUserSocial->id,
     		]);
