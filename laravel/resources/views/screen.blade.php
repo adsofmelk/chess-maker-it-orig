@@ -43,7 +43,11 @@
                         <div class="top-right links">
                             @auth
                                 <li>
-                                    <a class="cta" href="{{ route('home') }}">Inicio</a>
+                                    <a class="cta" href="{{ route('home') }}">Sala Cultivarte Fundacion Bolivar Davivienda </a>
+                                </li>
+                                <li>
+                                    <a class="cta" href="{{ route('home') }}">Sala General
+                                    </a>
                                 </li>
                             @else
                                 <li>
@@ -94,6 +98,9 @@
                             <i class="fa fa-play"></i>
                             <span>Jugar</span>
                         </button>
+                    </div>
+                    <div class="alert-goal-game"
+                         style="">El objetivo es capturar el balón
                     </div>
                     <div id="panel-restart" class="block-pieces-screen text-right" style="height: auto;display: none;background: 0;border:0;">
                         <span class="pull-left">Puntaje ELO-IT:&nbsp;

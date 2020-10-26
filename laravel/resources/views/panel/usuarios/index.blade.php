@@ -32,7 +32,7 @@
         </div>
         <div class="m-portlet__body">
             <div class="table-responsive">
-                <table id="table-usuarios" class="table table-striped table-bordered table-condensed m-blockui">
+                <table id="table-users" class="table table-striped table-bordered table-condensed m-blockui">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -64,31 +64,34 @@
     <script src="{{ url('js/datatables/js/buttons.html5.min.js') }}"></script>
     <script src="{{url('js/datatables/js/buttons.bootstrap4.min.js')}}"></script>
     <script>
-      window.tablas = [];
-      tablas['tabla-usuarios'] = $('#table-usuarios').DataTable({
+      window.tables = [];
+      window.tables['table-users'] = $('#table-users').DataTable({
         'columns': [
-          {'data': 'id'},
-          {'data': 'name'},
-          {'data': 'rating'},
-          {'data': 'game_count'},
-          {'data': 'game_win'},
-          {'data': 'game_empates'},
-          {'data': 'game_lose'},
-          {'data': 'type_auth'},
-          {'data': 'email', visible: false, targets: 8},
-          {'data': 'created_at', visible: false, targets: 9},
+          {data: 'id'},
+          {data: 'name'},
+          {data: 'rating'},
+          {data: 'game_count'},
+          {data: 'game_win'},
+          {data: 'game_empates'},
+          {data: 'game_lose'},
+          {data: 'type_auth'},
+          {data: 'email', visible: false, targets: 8},
+          {data: 'created_at', visible: false, targets: 9},
         ],
-        'columnDefs': [
+        columnDefs: [
           {
-            'targets': 10,
-            'data': null,
-            'defaultContent': '<a tabindex class="btn-show btn btn-outline-info m-btn m-btn--outline-2x m-btn--square btn-sm"><i class="la la-search la-2x"></i></a>',
+            targets: 10,
+            data: null,
+            defaultContent: '<a tabindex class="btn-show btn btn-outline-info m-btn m-btn--outline-2x m-btn--square btn-sm">' +
+              '<i class="la la-search la-2x"></i>' +
+              '</a>',
           },
         ],
-        'language': langDatatable,
-        'paging': true,
-        'searching': true,
+        language: langDatatable,
+        paging: true,
+        searching: true,
         pageLength: 50,
+        responsive: true,
         buttons: [
           {
             extend: 'excel',
@@ -106,18 +109,19 @@
             columns: '',
           },
         ],
+      }).on('xhr.dt', function() {
+        window.tables['table-users'].columns.adjust().draw();
       });
 
-      tablas['tabla-usuarios'].buttons().container().prependTo($('.col-md-6:eq(1) .dataTables_filter', tablas['tabla-usuarios'].table().container()));
+      window.tables['table-users'].buttons().container().prependTo($('.col-md-6:eq(1) .dataTables_filter', window.tables['table-users'].table().container()));
 
-      /*tablas['tabla-usuarios'].ajax.url('/panel/cabezotes/all').load()*/
-      tablas['tabla-usuarios'].ajax.url('panel/usuarios/all').load();
-      tablas['tabla-usuarios'].columns.adjust().draw();
+      /*window.tables['table-users'].ajax.url('/panel/cabezotes/all').load()*/
+      window.tables['table-users'].ajax.url('panel/usuarios/all').load();
 
       $(document).on('click', '.btn-show', function(b) {
         mApp.block('#portlet-section');
         window.rowTb = $(b.currentTarget).parents('tr');
-        const fila = tablas['tabla-usuarios'].row($(b.currentTarget).parents('tr'));
+        const fila = window.tables['table-users'].row($(b.currentTarget).parents('tr'));
         const data = fila.data();
 
         axios.get('panel/usuarios/show', {
@@ -143,7 +147,7 @@
 
       /*axios.get('/panel/distribution/all').then(function(response){
           console.log(response);
-          mApp.block('#table-usuarios');
+          mApp.block('#table-users');
           if (response.data.status == 200) {
               const rows = response.data.data;
               let count = 1;
@@ -153,7 +157,7 @@
                       fototes = '<img src="https://placehold.it/80x80" class="img-redonda" />'
                   }
 
-                  let newRow = tablas['tabla-usuarios'].row.add({
+                  let newRow = window.tables['table-users'].row.add({
                       'id': rows[i].id,
                       'numero': count,
                       'titulo': rows[i].titulo,
@@ -173,12 +177,12 @@
                   $('#panel-order').show();
               }
 
-              tablas['tabla-usuarios'].draw();
+              window.tables['table-users'].draw();
           } else {
               swal('Ha ocurrido un error al consultar los registros');
           }
 
-          mApp.unblock('#table-usuarios');
+          mApp.unblock('#table-users');
       });*/
 
     </script>

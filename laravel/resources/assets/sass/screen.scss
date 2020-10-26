@@ -113,6 +113,7 @@ body {
   position: absolute;
   right: 1rem;
   top: 1rem;
+  background: transparent;
 }
 
 .content-game {
@@ -173,6 +174,16 @@ body {
   border: 3px solid #FFC107;
 }
 
+.alert-goal-game {
+  display: block;
+  padding: 10px;
+  background: #FFC107;
+  width: 480px;
+  margin: auto;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 640px) {
   .table-chess {
     // width: 258px;
@@ -186,6 +197,10 @@ body {
   .block-pieces-screen {
     width: 346px;
     height: 55px;
+  }
+
+  .alert-goal-game {
+    width: 346px;
   }
 
   .box-chess {
