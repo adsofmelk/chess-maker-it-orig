@@ -1,4 +1,4 @@
-@extends('../../layouts.panel', ['title' => 'Boletín', 'menu_item' => '#menu-5',] ) 
+@extends('layouts.panel', ['title' => 'Boletín', 'menu_item' => '#menu-5',] )
 @section('estilos') {{--
 <link rel="stylesheet" href="js/datatables/css/buttons.dataTables.min.css"> --}}
 <link rel="stylesheet" href="js/datatables/css/buttons.bootstrap4.min.css">

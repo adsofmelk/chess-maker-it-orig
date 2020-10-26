@@ -1,4 +1,4 @@
-@extends('../../layouts.panel', ['title' => 'Listado de cabezotes', 'menu_item' => '#menu-1',] )
+@extends('layouts.panel', ['title' => 'Listado de cabezotes', 'menu_item' => '#menu-1',] )
 @section('content')
     <div class="m-portlet portlet-section" id="portlet-section">
         <div class="m-portlet__head">

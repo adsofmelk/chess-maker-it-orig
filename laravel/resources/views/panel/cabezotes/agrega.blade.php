@@ -1,4 +1,4 @@
-@extends('../../layouts.panel', ['title' => 'Agregar Cabezote', 'menu_item' => '#menu-1',] ) 
+@extends('layouts.panel', ['title' => 'Agregar Cabezote', 'menu_item' => '#menu-1',] )
 @section('estilos')
 <link rel="stylesheet" href="{{url('js/slim/css/slim.min.css')}}">
 @endsection
