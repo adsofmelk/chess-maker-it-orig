@@ -2,7 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 
 <head>
-    <base href="{{config('app.url')}}">
+    <base href="{{ config('app.url') }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,7 +52,8 @@
                 <!-- Right Side Of Navbar -->--}}
                 <ul class="navbar-nav ml-auto">
                     {{--
-                    <!-- Authentication Links -->--}} @guest
+                    <!-- Authentication Links -->--}}
+                    @guest
                         <li><a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a></li>
                         <li><a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a></li>
                     @else
@@ -60,29 +61,29 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false" v-pre>
-                                @if(Auth::user()->avatar)
-                                    @if(strpos(Auth::user()->avatar, 'http') === false)
-                                        <img src="photosuser/{{ Auth::user()->avatar }}" alt="Avatar {{ Auth::user()->name }}" class="img-avatar mr-2">
+                                @if(auth()->user()->avatar)
+                                    @if(strpos(auth()->user()->avatar, 'http') === false)
+                                        <img src="photosuser/{{ auth()->user()->avatar }}" alt="Avatar {{ auth()->user()->name }}" class="img-avatar mr-2">
                                     @else
-                                        <img src="{{ Auth::user()->avatar }}" alt="Avatar {{ Auth::user()->name }}" class="img-avatar mr-2">
+                                        <img src="{{ auth()->user()->avatar }}" alt="Avatar {{ auth()->user()->name }}" class="img-avatar mr-2">
                                     @endif
                                 @else
                                     <img src="{{ url('photosuser/avatar_default.jpg') }}"
-                                         alt="Avatar {{ Auth::user()->name }}" class="img-avatar mr-2">
+                                         alt="Avatar {{ auth()->user()->name }}" class="img-avatar mr-2">
                                 @endif
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ auth()->user()->name }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                @if(Auth::user()->admin==1)
+                                @if(auth()->user()->admin==1)
                                     <a href="{{route('panel')}}" class="dropdown-item">
                                         <i class="fa fa-address-card mr-2"></i>
                                         <span>Panel</span>
                                     </a> @endif
-                                    <a href="{{route('index_perfil')}}" class="dropdown-item">
-                                        <i class="fa fa-user mr-2"></i>
-                                        <span>Mi cuenta</span>
-                                    </a>
+                                <a href="{{route('index_perfil')}}" class="dropdown-item">
+                                    <i class="fa fa-user mr-2"></i>
+                                    <span>Mi cuenta</span>
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
 													 document.getElementById('logout-form').submit();">
                                     <i class="fa fa-sign-out mr-2"></i>
