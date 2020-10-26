@@ -1,0 +1,106 @@
+Manifest-Version: 1.0
+Built-By: 2.1.0
+Created-By: Android Gradle 2.1.0
+
+Name: assets/www/jquery-mobile/jquery.mobile-1.0.min.css
+SHA1-Digest: Ii6XGwUoi4sRKMcJF0eFKqc1gsI=
+
+Name: AndroidManifest.xml
+SHA1-Digest: 6we4YoSsFAj7SvT9FxePJJ7MzFY=
+
+Name: assets/www/phonegap.js
+SHA1-Digest: Czdu5ucpNMb1t/K0hBxT4PTLDWo=
+
+Name: res/drawable-ldpi-v4/icon.png
+SHA1-Digest: W7MEUoHa/jQ3iSBhdSFooBkBQ08=
+
+Name: assets/www/jquery-mobile/jquery.mobile-1.0.min.js
+SHA1-Digest: AoGkiIpfEUrDw3ri+jj+64mOBZY=
+
+Name: assets/www/cordova.js
+SHA1-Digest: Czdu5ucpNMb1t/K0hBxT4PTLDWo=
+
+Name: res/drawable-hdpi-v4/icon.png
+SHA1-Digest: 0c41TmMPjF7lhKPDpffWYQgh7sE=
+
+Name: res/xml/config.xml
+SHA1-Digest: 7gq0a2qqz2yCwWBWqsQ0R5zcx54=
+
+Name: assets/www/img/j14.png
+SHA1-Digest: EDBL9CngOdN3drSN6gw3vCw3hHI=
+
+Name: assets/www/img/j23.png
+SHA1-Digest: +fYVqoTYMX6QW/K6S3RN+jbvbeI=
+
+Name: assets/www/img/j13.png
+SHA1-Digest: EDBL9CngOdN3drSN6gw3vCw3hHI=
+
+Name: assets/www/img/balon.png
+SHA1-Digest: GpBAvCBBc1Kt+Us0BxEExko5HdY=
+
+Name: assets/www/img/j26.png
+SHA1-Digest: b1Tc4Nx1CPtM3ngKOPLyO6cF8W0=
+
+Name: assets/www/jquery-mobile/images/icons-36-black.png
+SHA1-Digest: Vy7xszlxTTQfDYbLf2qdD3JTqac=
+
+Name: assets/www/img/j22.png
+SHA1-Digest: DugSwVpkQShdIDmO6VVLNqSm1EM=
+
+Name: assets/www/img/j12.png
+SHA1-Digest: NDurF7sGjWmdfXm/dQHuEA8z0lk=
+
+Name: assets/www/index.html
+SHA1-Digest: TKw+OccypTMr6o0mk63ZuWlOGAg=
+
+Name: assets/www/jquery-mobile/images/icons-18-white.png
+SHA1-Digest: tCGQR9+4nuHSGL7W4Uvpw1QJYeE=
+
+Name: assets/www/img/j21.png
+SHA1-Digest: DugSwVpkQShdIDmO6VVLNqSm1EM=
+
+Name: assets/www/logochess.png
+SHA1-Digest: 1tY/hfkMjKAukPz3Fel87FdLHcQ=
+
+Name: assets/www/jquery-mobile/images/ajax-loader.png
+SHA1-Digest: OsJZu2fGQUmOP38E3RClzRS7SBI=
+
+Name: assets/www/img/j25.png
+SHA1-Digest: b1Tc4Nx1CPtM3ngKOPLyO6cF8W0=
+
+Name: res/drawable-xhdpi-v4/icon.png
+SHA1-Digest: bHcUENu53fcAzl9/cqJyhCXNRh0=
+
+Name: assets/www/img/j24.png
+SHA1-Digest: +fYVqoTYMX6QW/K6S3RN+jbvbeI=
+
+Name: assets/www/ProjectSettings
+SHA1-Digest: xzoc5OIk4xlJzQUPvmBCfUC27So=
+
+Name: assets/www/img/j16.png
+SHA1-Digest: /IF109cpFMWs+NM/oJcPeyB1VUg=
+
+Name: assets/www/jquery-mobile/images/icons-18-black.png
+SHA1-Digest: qNg1dbPEFbqF6fMjj/sKGTEH/e8=
+
+Name: res/drawable-mdpi-v4/icon.png
+SHA1-Digest: 43pi/Wiqe8LPIpnf0hFXv8FOTKg=
+
+Name: assets/www/img/j15.png
+SHA1-Digest: /IF109cpFMWs+NM/oJcPeyB1VUg=
+
+Name: resources.arsc
+SHA1-Digest: 1yMaTVqv3FARuFazCx7uFaiK9Z8=
+
+Name: assets/www/jquery-mobile/jquery-1.6.4.min.js
+SHA1-Digest: W5U4sSh6G+vWI3YI3dVHZQeewkU=
+
+Name: classes.dex
+SHA1-Digest: zvAYo/To7PIf6+LxkUIEKBpE074=
+
+Name: assets/www/img/j11.png
+SHA1-Digest: NDurF7sGjWmdfXm/dQHuEA8z0lk=
+
+Name: assets/www/jquery-mobile/images/icons-36-white.png
+SHA1-Digest: /qQNjRrhtfaBnuvmldrD8kPGIJ4=
+

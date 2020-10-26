@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Chess Make It</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="ajedrezfutbol" />
+	<meta name="keywords" content="ajedrezfutbol" />
+	<meta name="author" content="ChessMakeIt" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+		
+			<script>
+var kazarw=1;var kazarepite=1;
+window.onload=function(){
+var t=document.getElementById("canvas"),ctx=t.getContext("2d");
+
+var myWidth = 0, myHeight = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //No-IE
+    myWidth = window.innerWidth;
+    myHeight = window.innerHeight;
+  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+
+    myWidth = document.documentElement.clientWidth;
+    myHeight = document.documentElement.clientHeight;
+  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+    //IE 4 compatible
+    myWidth = document.body.clientWidth;
+    myHeight = document.body.clientHeight;
+  }
+
+  if (myWidth < 400){
+  ctx.canvas.width  = 288;
+  ctx.canvas.height = 360;
+  document.getElementById("video").width  = 288;
+  }
+  
+var ancho=parseInt(t.width);var largo=parseInt(t.height);
+var intw=parseInt(ancho/8);var inth=parseInt(largo/10);
+
+repetir=function(){kflagfinfin=0;
+kazarw=kazarepite;
+document.getElementById("jugar").value="Juegan Blancas";
+document.getElementById("puntos").value="Puntos";
+document.getElementById("tiempo").value="segundos";
+window.onload()
+};/*fin repetir*/
+
+diagrama=function(){kflagfinfin=0;
+kazarw=0;document.getElementById("jugar").value="Juegan Blancas";
+document.getElementById("puntos").value="Puntos";
+document.getElementById("tiempo").value="segundos";
+window.onload()
+};/*fin diagrama*/
+
+kguj=1;kgu=kguj;
+document.getElementById("jugar").value="Juegan Blancas";
+if(kguj==2){document.getElementById("jugar").value="Juegan negras";}
+else{document.getElementById("jugar").value="Juegan blancas";};
+kflagturno=kguj;z=kguj;ij=0;cij=0;
+
+var xj=[9]
+for (i=0; i <9; i++){xj[i]=[9];};
+var yj=[9]
+for (i=0; i <9; i++){yj[i]=[9];};
+var idj=[15]
+for (i=0; i <15; i++){idj[i]=[15];}; 
+var jg;var kg;var xjug;var yjug;
+var marca;
+var fjini=[9];
+for (i=0; i <9; i++){fjini[i]=[9];};
+var cjini=[9];
+for (i=0; i <9; i++){cjini[i]=[9];};
+var fu=[9];
+for (i=0; i <9; i++){fu[i]=[9];};
+var cu=[9];
+for (i=0; i <9; i++){cu[i]=[9];};
+var fm=[9];
+for (i=0; i <9; i++){fm[i]=[9];};
+var cm=[9];
+for (i=0; i <9; i++){cm[i]=[9];};
+var fam=[];var cam=[];var fa=[];var ca=[];var kmw=[];
+var cini=[];var cend=[];var fini=[];var fend=[];
+var kcontra=[];
+var fintermov=[9];
+for(i=0;i<9;i++){fintermov[i]=[9];};
+var cintermov=[9];
+for(i=0;i<9;i++){cintermov[i]=[9];};
+var kflagm=[9];
+for (i=0; i <9; i++){kflagm[i]=[9];};
+var ptos=[];var kfin=[];
+var intxmov=[];var intymov=[];var kpri=[];
+var idj=["imgj11","imgj11","imgj13","imgj15","imgj21","imgj21","imgj23","imgj25"];
+var txtimg;var xbalon;var ybalon;
+var intx,inty,intxL,intyL;var puntos;
+var fbalon=xbalon;var cbalon=ybalon;
+/* r[] para almacenar rectangulos con r.push */
+
+var i=intw,xf=8,yc=8,d=intw,n=intw,r=[],
+
+	tablero=function()
+	{
+	for(var e=1;yc>=e;e++)
+		for(var t=1;xf>=t;t++)
+		{
+		var l=0,c=(t-1)*(l+d),o=(e-1)*(l+n);
+		ctx.beginPath(),e%2==0?t%2==0?ctx.fillStyle="lightblue":ctx.fillStyle="lightyellow":t%2==0?ctx.fillStyle="lightyellow":ctx.fillStyle="lightblue",
+		ctx.fillRect(c,o,i,i),r.push({id:"c"+e+t,x:c,y:o,width:i,height:i})
+		}
+	};
+tablero();
+
+jugadores=function(txtimg,intx,inty,intw,inth)
+{
+var jug=
+{
+id:txtimg,
+draw:function(){var j=document.getElementById(this.id);ctx.beginPath(),ctx.drawImage(j,intx,inty,intw,inth)}
+};
+jug.draw();
+};
+
+var marca=[];var digito=[];var njg=[];
+var kflagempate=[];
+var jgmax,fbalon,cbalon,resu,debeganar,kan,kanjuega,kdebeganar,kgana,kjuega;
+var jugadas,jugini,jugend,kdificultad,ksumaptos;
+var kguQ,kontot;
+var kazar;var jgmax=3;var jgm;
+
+/* aqui empiezan las Marcas */
+var nn=4;
+marca[1]="d5*te4ag6cc6*tf5ae8cc5*b*e4e5f5e5c6e5e8g6e5g6c5e6";
+marca[2]="a8*te5ae6cd5*td4ad8ca5*=*d5b6d8b6e6d5d4d5e5d5a5c4";
+marca[3]="d5*td7af4cf2*te6ad6cf5*=*f2g4f5e7d7e7d6e7g4e3e6e3";
+marca[4]="d5*te6ac5cf5*td7af4cf2*b*e6d6d7d6c5d6f4g5d6f4f2d1";
+
+
+/*aqui terminan las Marcas */
+
+kazar=Math.ceil(Math.random()*nn);
+if(kazarw==kazarepite){kazar=kazarepite;};kazarepite=kazar;kazarw=0;
+
+var car = marca[kazar];
+resu=car.substring(23,24);debeganar=resu.charCodeAt(0)-97;
+if(debeganar==1){kdebeganar=1;};if(debeganar==13){kdebeganar=2;};if(debeganar==-36){kdebeganar=3;};
+balon=car.substring(0,2);blancas=car.substring(3,12);negras=car.substring(13,22);
+xj[0][0]=intw*(balon.charCodeAt(0)-97);yj[0][0]=inth*(8-parseInt(balon.charAt(1)));
+
+jugadas=car.substring(25,76);
+jugini=jugadas.substring(0,2);jugend=jugadas.substring(2,4);
+cini[1]=jugini.charCodeAt(0)-97;fini[1]=8-jugini.charAt(1);cend[1]=jugend.charCodeAt(0)-97;fend[1]=8-jugend.charAt(1);
+
+jugini=jugadas.substring(4,6);jugend=jugadas.substring(6,8);
+cini[2]=jugini.charCodeAt(0)-97;fini[2]=8-jugini.charAt(1);cend[2]=jugend.charCodeAt(0)-97;fend[2]=8-jugend.charAt(1);
+
+jugini=jugadas.substring(8,10);jugend=jugadas.substring(10,12);
+cini[3]=jugini.charCodeAt(0)-97;fini[3]=8-jugini.charAt(1);cend[3]=jugend.charCodeAt(0)-97;fend[3]=8-jugend.charAt(1);
+
+jugini=jugadas.substring(12,14);jugend=jugadas.substring(14,16);
+cini[4]=jugini.charCodeAt(0)-97;fini[4]=8-jugini.charAt(1);cend[4]=jugend.charCodeAt(0)-97;fend[4]=8-jugend.charAt(1);
+
+jugini=jugadas.substring(16,18);jugend=jugadas.substring(18,20);
+cini[5]=jugini.charCodeAt(0)-97;fini[5]=8-jugini.charAt(1);cend[5]=jugend.charCodeAt(0)-97;fend[5]=8-jugend.charAt(1);
+
+jugini=jugadas.substring(20,22);jugend=jugadas.substring(22,24);
+cini[6]=jugini.charCodeAt(0)-97;fini[6]=8-jugini.charAt(1);cend[6]=jugend.charCodeAt(0)-97;fend[6]=8-jugend.charAt(1);
+
+jugini=jugadas.substring(24,42);
+ksumaptos=0;
+
+
+digito[0]=1;digito[1]=0;digito[2]=0;
+for(kg=1;kg<7;kg++){ptos[kg]=digito[0]*100+digito[1]*10+digito[2]*1;ksumaptos=ptos[kg];};
+
+jugini=jugadas.substring(43,47);
+/*digito[0]=parseInt(jugini.charAt(0));digito[1]=parseInt(jugini.charAt(1));digito[2]=parseInt(jugini.charAt(2));digito[3]=parseInt(jugini.charAt(3));*/
+digito[0]=2;digito[1]=1;digito[2]=2;digito[3]=3;
+kdificultad=digito[0]*1000+digito[1]*100+digito[2]*10+digito[3]*1
+
+/* BLANCAS */
+for(jg=1;jg<jgmax+1;jg++){carac1=parseInt(1+(jg-1)*3);
+xj[jg][1]=intw*(blancas.charCodeAt(carac1)-97);yj[jg][1]=inth*(8-parseInt(blancas.charAt(carac1+1)));
+cjini[jg][1]=parseInt(xj[jg][1]/intw);fjini[jg][1]=parseInt(yj[jg][1]/inth)
+};
+
+/* NEGRAS */
+for(jg=1;jg<jgmax+1;jg++){carac1=parseInt(1+(jg-1)*3);
+xj[jg][2]=intw*(negras.charCodeAt(carac1)-97);yj[jg][2]=inth*(8-parseInt(negras.charAt(carac1+1)));
+cjini[jg][2]=parseInt(xj[jg][2]/intw);fjini[jg][2]=parseInt(yj[jg][2]/inth)
+};
+
+var jg,kg,intx,inty,txtimg;
+/*for(jg=1;jg<2;jg=jg+1){for(kg=1;kg<3;kg++){cjini[jg][kg]=parseInt(xj[jg][kg]/intw);fjini[jg][kg]=parseInt(yj[jg][kg]/inth)};};*/
+for(jg=1;jg<4;jg=jg+1){for(kg=1;kg<3;kg++){inty=fjini[jg][kg]*inth;intx=cjini[jg][kg]*intw;txtimg=idj[jg+(kg-1)*4];jugadores(txtimg,intx,inty,intw,inth);};};
+
+inty=yj[0][0];intx=xj[0][0];txtimg="balon";jugadores(txtimg,intx,inty,intw,inth);
+cbalon=parseInt(intx/intw);fbalon=parseInt(inty/inth);xbalon=cbalon*intw;ybalon=fbalon*inth;
+
+var ij=0;
+var xjt;var yjt;
+var jg;var kg;var xx;var yy;
+var kflag;
+var ij2=0;var zij2=0;
+var fil;var col;var dif;
+var xr;var yr;
+var difil;var dicol;
+var zzk,ik,xk,yk,xjugk,yjugk;
+var kflag,kflagk,kflagb,kflagc,kflagcap,kjaquemate;
+var signf=[9];var signc=[9];var signcf=[9];var signcc=[9];
+var cij=0;
+var jgjaque = [9];var jgjaquedes=[0];
+var jginter=[9];var jgcap=[9];var jugada=[9];var jgmov=[9];var jugadaQ=[9];
+var intxjaque=[9];intyjaque=[9];var intxjug=[9];var intyjug=[9];
+var intxjgcap=[9];intyjgcap=[9];var intxkguj=[9];intykguj=[9];
+var jgmovcap=[9];var jugada=[];
+var kcap=[];var kcapkguj=[];var kflagcap=[];
+var jgdes;var kflagdes;
+var jgdesn=[];var jgdesb=[];var kwdesn;var kwdesb;
+var  strcolor="yellow";var jgmovjaquedes;
+var jgmj,jgd;var kjmate;var kflagintercontra;
+var krw,fp,fpm,cp,cpm,hTA,ptosajuste;
+var xxjaque=[];yyjaque=[];var xxjug=[];var yyjug=[];
+
+signf[0]=0;signf[1]=1;signf[2]=1;signf[3]=1;signf[4]=0;signf[5]=-1;signf[6]=-1;signf[7]=-1;signf[8]=0;
+signc[0]=0;signc[1]=1;signc[2]=0;signc[3]=-1;signc[4]=-1;signc[5]=-1;signc[6]=0;signc[7]=1;signc[8]=1;
+
+signcf[0]=0;signcf[1]=2;signcf[2]=2;signcf[3]=1;signcf[4]=-1;signcf[5]=-2;signcf[6]=-2;signcf[7]=-1;signcf[8]=1;
+signcc[0]=0;signcc[1]=1;signcc[2]=-1;signcc[3]=-2;signcc[4]=-2;signcc[5]=-1;signcc[6]=1;signcc[7]=2;signcc[8]=2;
+
+var fjaque,cjaque,fjaquedes,cjaquedes,jgdajaque,jgmovcontra;
+var fjaquem,cjaquem,kontm,hm,km,kflagkm,kgum,kflagmov,kontwTA;kflagjaquemov=0;
+var kw,kont,kontw,kontk,kontdes,kontdesw,kk,kflagk,kflagfinter,kflagempate1,kflagempate2;
+var kjwkguj,kflagjg,kuw,kwinter;
+var jgu;var kr;var kflagkj;var kflagfinfin;
+var kuk,njugadas;var kwjug;
+var kflagjg;var difmax,fh,ch,faj,caj;
+
+/* inicio funciones */
+
+/* inicia fun jaquedes() */
+jaquedes=function(){
+kflag=0;kflagdes=0;jgjaquedes[0]=0;
+/* llega fjaquedes cjaquedes (casilla con pieza que se mueve) */
+/* validar linea recta entre balon y casilla */
+ff=parseInt(fjaquedes-fbalon);cc=parseInt(cjaquedes-cbalon);
+kflag=0;
+if(Math.abs(ff)==Math.abs(cc)){kflagdes=2;};
+if(Math.abs(ff)==0){kflagdes=1;};if(Math.abs(cc)==0){kflagdes=1;};
+if(ff!=0){ff=ff/Math.abs(ff);};if(cc!=0){cc=cc/Math.abs(cc);};
+hh=0;
+if(kflagdes==2){
+if(ff==1){if(cc==1){hh=1};};if(ff==1){if(cc==-1){hh=3};};if(ff==-1){if(cc==-1){hh=5};};if(ff==-1){if(cc==1){hh=7};};
+	    };
+if(kflagdes==1){
+if(ff==1){if(cc==0){hh=2;};};if(ff==0){if(cc==-1){hh=4;};};if(ff==1){if(cc==0){hh=6;};};if(ff==0){if(cc==1){hh=8;};};
+	    };
+if(hh>0){
+
+kk=0;kflagk=0;kflag=0;kflagjg=0;
+
+while(kflagk==0){kk=kk+1;
+fa[kk]=fbalon+kk*signf[hh];ca[kk]=cbalon+signc[hh]*kk;
+if(fa[kk]<1){kflagk=1;};if(ca[kk]<1){kflagk=1;};if(fa[kk]>6){kflagk=1;};if(ca[kk]>6){kflagk=1;};
+if(fa[kk]==fjaquedes){if(ca[kk]==cjaquedes){kflagk=1;kflag=2;kflagjg=1;};};
+jgu=0;while(kflagjg==0){
+jgu=jgu+1;if(jgu==jgmax){kflagjg=1;};
+if(fa[kk]==parseInt(yj[jgu][kgu]/inth)){if(ca[kk]==parseInt(xj[jgu][kgu]/intw)){kflagk=1;kflag=1;kflagjg=1;};};
+if(fa[kk]==parseInt(yj[jgu][3-kgu]/inth)){if(ca[kk]==parseInt(xj[jgu][3-kgu]/intw)){kflagk=1;kflag=1;kflagjg=1;};};
+}; /* fin while(kflagjg==0 */
+}; /* fin while(kflagk==0 */
+}; /* fin if(hh>0 */
+
+if(kflag==2){
+/* jaquedes ok ... inicia buscar torre o alfil detras de pieza que se mueve */
+
+kflag=0;kk=0;kflagk=0;for(jgd=1;jgd<jgmax;jgd++){jgjaquedes[jgd]=0;};
+
+while(kflagk==0){
+kk=kk+1;fa[kk]=fjaquedes+signf[hh]*kk;ca[kk]=cjaquedes+signc[hh]*kk;
+if(fa[kk]<1){kflagk=1;};if(ca[kk]<1){kflagk=1;};if(fa[kk]>6){kflagk=1;};if(ca[kk]>6){kflagk=1;};
+
+for(jgd=1;jgd<jgmax-1;jgd++){
+/* kflagdes=1 para torre  .... kflagdes=2 para alfil */
+
+if(fa[kk]==parseInt(yj[jgd][3-kgu]/inth)){if(ca[kk]==parseInt(xj[jgd][3-kgu]/intw)){
+kflag=1;kflagk=1;
+if(kflagdes==1){if(jgd==1){kflagdes=3;jgjaquedes[kflagdes]=jgd;};};
+if(kflagdes==2){if(jgd==2){kflagdes=4;jgjaquedes[kflagdes]=jgd;};};
+};};
+
+if(fa[kk]==parseInt(yj[jgd][kgu]/inth)){if(ca[kk]==parseInt(xj[jgd][kgu]/intw)){
+kflag=4;kflagk=1;
+if(kflagdes==1){if(jgd<3){kflagdes=3;jgjaquedes[kflagdes]=jgd;};};
+if(kflagdes==2){if(jgd>2){kflagdes=4;jgjaquedes[kflagdes]=jgd;};};
+};};
+}; /* fin for(jgd=1 */
+}; /* fin while(kflagk==0 */
+}; /* fin if(kflag==2 */
+}; /* fin jaquedes */
+
+/* inicia fun jaque() llega fjaque cjaque fj cj */
+jaque = function(){
+for(h=1;h<9;h++){k=0;kflag=0;kflagk=0;
+if(fjaque==0){if(h>4){if(h<8){kflagk=1;};};};
+if(fjaque==7){if(h>0){if(h<4){kflagk=1;};};};
+if(cjaque==0){if(h>2){if(h<6){kflagk=1;};};};
+if(cjaque==7){if(h>6){kflagk=1;};if(h==1){kflagk=1;};};
+while(kflagk==0){
+k=k+1;kflag=0;
+fa[k]=fjaque+signf[h]*k;ca[k]=cjaque+signc[h]*k;
+if(fa[k]==parseInt(yj[0][0]/inth)){if(ca[k]==parseInt(xj[0][0]/intw)){kflagk=1;kflag=1;};};
+if(k>1){
+if(fa[k]>6){if(fa[k-1]<fa[k]){kflagk=1;};};
+if(ca[k]>6){if(ca[k-1]<ca[k]){kflagk=1;};};
+if(fa[k]<1){if(fa[k-1]>fa[k]){kflagk=1;};};
+if(ca[k]<1){if(ca[k-1]>ca[k]){kflagk=1;};};
+};
+if(fa[k]>7){kflag=1;kflagk=1;};if(fa[k]<0){kflag=1;kflagk=1;};
+if(ca[k]>7){kflag=1;kflagk=1;};if(ca[k]<0){kflag=1;kflagk=1;};
+
+while(kflag==0){
+for(jg=1;jg<jgmax;jg++){if(jg==jgmax-1){kflag=1;};
+if(fa[k]==parseInt(yj[jg][3-kguQ]/inth)){if(ca[k]==parseInt(xj[jg][3-kguQ]/intw)){
+kflag=1;kflagk=1;
+};/*fin if(ca[k */
+};/*fin if( fa[k */
+
+if(fa[k]==parseInt(yj[jg][kguQ]/inth)){if(ca[k]==parseInt(xj[jg][kguQ]/intw)){kflag=1;kflagk=1;
+	if(jg==1){if(fa[k]==fjaque){kflag=2;kflagk=1;};};if(jg==1){if(ca[k]==cjaque){kflag=2;kflagk=1;};};
+	if(jg==2){if(Math.abs(fa[k]-fjaque)==Math.abs(ca[k]-cjaque)){kflag=2;kflagk=1;};};
+
+if(kflag>1){
+	kont=kont+1;jgjaque[kont]=jg;kontw=kont;jgdajaque=jg;kw=k;xxjaque[kont]=ca[k]*intw;yyjaque[kont]=fa[k]*inth;
+if(k>1){for(kk=1;kk<k+1;kk++){fu[kont][kk]=fa[kk];cu[kont][kk]=ca[kk];kmw[kont]=k;};}; 
+};/*fin if(kflag>1 */
+
+};/*fin if(ca[k */
+};/* fin if(fa[k */
+
+};/*fin for(jg */
+};/* while(kflag */
+};/* while(kflagk */
+};/* h */
+/*caballo*/
+for(h=1;h<9;h++){
+kflag=0;
+fa[0]=fjaque+signcf[h];ca[0]=cjaque+signcc[h];
+if(fa[0]>7){kflag=1;};if(fa[0]<0){kflag=1;};
+if(ca[0]>7){kflag=1;};if(ca[0]<0){kflag=1;};
+if(kflag==0){
+jg=3;
+if(fa[0]==parseInt(yj[jg][kguQ]/inth)){if(ca[0]==parseInt(xj[jg][kguQ]/intw)){
+kont=kont+1;kontw=kont;jgdajaque=jg;jgjaque[kont]=jg;intxjaque[kont]=ca[k]*intw;intyjaque=fa[k]*inth;
+};};
+};/* fin if(kflag */
+}; /* fin for(h=1 */
+}; /* fin jaque */
+
+/* inicia fun captura() */
+captura = function(){
+for(h=1;h<9;h++){
+k=0;kflagk=0;
+if(fjaque==0){if(h>4){if(h<8){kflagk=1;};};};if(fjaque==7){if(h>0){if(h<4){kflagk=1;};};};
+if(cjaque==0){if(h>2){if(h<6){kflagk=1;};};};if(cjaque==7){if(h>6){kflagk=1;};if(h==1){kflagk=1;};};
+while(kflagk==0){
+k=k+1;kflag=0;
+fa[k]=fjaque+signf[h]*k;ca[k]=cjaque+signc[h]*k;
+if(fa[k]==parseInt(yj[0][0]/inth)){if(ca[k]==parseInt(xj[0][0]/intw)){kflagk=1;kflag=1;};};
+if(k>1){
+if(fa[k]>6){if(fa[k-1]<fa[k]){kflagk=1;};};
+if(ca[k]>6){if(ca[k-1]<ca[k]){kflagk=1;};};
+if(fa[k]<1){if(fa[k-1]>fa[k]){kflagk=1;};};
+if(ca[k]<1){if(ca[k-1]>ca[k]){kflagk=1;};};
+};
+if(fa[k]>7){kflag=1;kflagk=1;};if(fa[k]<0){kflag=1;kflagk=1;};
+if(ca[k]>7){kflag=1;kflagk=1;};if(ca[k]<0){kflag=1;kflagk=1;};
+jg=0;
+while(kflag==0){
+jg=jg+1;if(jg==jgmax-1){kflag=1;};
+if(fa[k]==parseInt(yj[jg][3-kguQ]/inth)){if(ca[k]==parseInt(xj[jg][3-kguQ]/intw)){kflag=1;kflagk=1;};};
+
+/*ccccccccccccccccc */
+if(fa[k]==parseInt(yj[jg][kguQ]/inth)){if(ca[k]==parseInt(xj[jg][kguQ]/intw)){
+kflag=1;kflagk=1;
+if(jg==1){
+if(fa[k]==fjaque){kflag=2;};if(ca[k]==cjaque){kflag=2;};
+};
+if(jg==2){if(Math.abs(fa[k]-fjaque)==Math.abs(ca[k]-cjaque)){kflag=2;};};
+if(kflag>1){kont=kont+1;kontw=kont;
+jgjaque[kont]=jg;xxjaque[kont]=ca[k]*intw;yyjaque[kont]=fa[k]*inth;intxjaque[kont]=cjaque*intw;intyjaque[kont]=fjaque*inth;};
+};/* if(fa */};/* if(ca */
+/* ccccccccccccccccccc */
+
+};/* fin de while(kflag==0 */
+}; /* while(kflagk */
+}; /* h */
+/*alert("en captura ...caballo?");*/
+for(h=1;h<9;h++){
+kflag=0;
+fa[0]=fjaque+signcf[h];ca[0]=cjaque+signcc[h];
+if(fa[0]>7){kflag=1;};if(fa[0]<0){kflag=1;};
+if(ca[0]>7){kflag=1;};if(ca[0]<0){kflag=1;};
+if(kflag==0){
+jg=3;
+if(fa[0]==parseInt(yj[jg][kguQ]/inth)){if(ca[0]==parseInt(xj[jg][kguQ]/intw)){
+kont=kont+1;kontw=kont;jgjaque[kont]=jg;xxjaque[kont]=ca[0]*intw;yyjaque[kont]=fa[0]*inth;intxjaque[kont]=cjaque*intw;intyjaque[kont]=fjaque*inth;
+};};
+};/*fin if(kflag */
+}; /* h */
+}; /* fincaptura */ 
+
+/* inicia fun movjaque() */
+movjaque=function(){
+kj=0;kjw=0;
+for(hm=1;hm<9;hm++){
+
+fjaquem=fbalon;cjaquem=cbalon;kgum=kgu; 
+km=0;kw=0;kflagkm=0;
+
+while(kflagkm==0){
+km=km+1;kw=km;
+fam[km]=fjaquem+signf[hm]*km;cam[km]=cjaquem+signc[hm]*km; 
+if(fam[km]>7){kflagkm=1;};if(cam[km]>7){kflagkm=1;};if(fam[km]<1){kflagkm=1;};if(cam[km]<1){kflagkm=1;};
+jgmovcontra=0;
+/* se parte de casilla libre u ocupada por contrario */
+kflagjg=0;
+for(jgd==1;jgd<jgmax+1;jgd++){
+if(fam[km]==parseInt(yj[jgd][3-kgum]/inth)){if(cam[km]==parseInt(xj[jgd][3-kgum]/intw)){kflagjg=1;kflagkm=1;jgmovcontra=jgd;
+/* alert("casilla con pieza del contrario que sera capturada al jaque"); */ 
+};};
+if(fam[km]==parseInt(yj[jgd][kgum]/inth)){if(cam[km]==parseInt(xj[jgd][kgum]/intw)){kflagjg=2;kflagkm=1;
+/* alert("casilla con pieza propia");*/
+};};	
+};/* fin for(jgd */
+
+/* ffffffffffffffff */
+if(kflagjg<2){
+/* casilla libre u ocupada por contrario */
+fjaque=fam[km];cjaque=cam[km];
+for(h=1;h<9;h++){
+k=0;kflagk=0;
+while(kflagk==0){
+k=k+1;fa[k]=fjaque+signf[h]*k;ca[k]=cjaque+signc[h]*k;
+if(fa[k]>6){kflagk=1;};if(ca[k]>6){kflagk=1;};if(fa[k]<1){kflagk=1;};if(ca[k]<1){kflagk=1;};
+if(fa[k]==parseInt(yj[0][0]/inth)){if(ca[k]==parseInt(xj[0][0]/intw)){kflagk=1;};};
+/* gggggggggggggg */
+jg=0;kflag=0;
+for(jg=1;jg<jgmax+1;jg++){
+if(kflag==0){
+if(fa[k]==parseInt(yj[jg][3-kgu]/inth)){if(ca[k]==parseInt(xj[jg][3-kgu]/intw)){kflagk=1;kflag=1;};};
+if(fa[k]==parseInt(yj[jg][kgu]/inth)){if(ca[k]==parseInt(xj[jg][kgu]/intw)){kflagk=1;kflag=2;};};
+/* aaaaaaaaaaaaaaa */
+if(kflag==2){
+kflagkj=0;
+if(hm%2!=0){if(h%2!=0){if(jg==2){kflagkj=1;
+kj=kj+1;kjw=kj;jgmov[kj]=jg;intymov[kj]=fjaque*inth;intxmov[kj]=cjaque*intw;kcap[kj]=0;/* alfil */
+jgmovcap[kj]=0;if(kflagjg==1){kcap[kj]=1;jgmovcap[kj]=jgmovcontra;};
+};};};
+
+if(hm%2==0){if(h%2==0){if(jg==1){kflagkj=1;
+kj=kj+1;kjw=kj;jgmov[kj]=jg;intymov[kj]=fam[km]*inth;intxmov[kj]=cam[km]*intw;kcap[kj]=0;/* torre */
+jgmovcap[kj]=0;if(kflagjg==1){kcap[kj]=1;jgmovcap[kj]=jgmovcontra;};
+};};};
+
+if(kflagkj==1){kmw[kj]=kw-1;}
+/* kw-1 es la cantidad de casillas para posible interceptaci?n del jaque propio */  
+if(kw>1){for(kr=1;kr<kw;kr++);{fm[kj][kr]=fam[kr];cm[kj][kr]=cam[kr];;}
+}; /* fin if(kflagkj==1 */
+};/* fin if(kflag==0 */
+};/* fin if(kflag==2 */
+
+/* aaaaaaaaaaaaaa */
+}; /* fin for(jg */
+/* ggggggggggggg */
+
+}; /* fin de while(kflagk */
+/* ////////////////////// */
+}; /* fin de for(h */
+}; /* fin if(kflagjg<2 */
+/* fffffffffffffffff  */
+}; /* fin de while(kflagkm */
+}; /* fin de for(hm */
+/* caballo */
+kj=kjw;fjaquem=fbalon;cjaquem=cbalon;
+for(hm=1;hm<9;hm++){
+fam[0]=fjaquem+signcf[hm];cam[0]=cjaquem+signcc[hm];
+kflagmov=0;jgd=0;
+while(kflagmov==0){
+jgd=jgd+1;if(jgd==jgmax){kflagmov=1;};
+if(fam[0]==parseInt(yj[jgd][3-kgu]/inth)){if(cam[0]==parseInt(xj[jgd][3-kgu]/intw)){kflagmov=1;jgmovcontra=jgd;};};
+if(fam[0]==parseInt(yj[jgd][kgu]/inth)){if(cam[0]==parseInt(xj[jgd][kgu]/intw)){kflagmov=2;};};
+}; /* fin while(kflagmov==0 */
+
+if(kflagmov<2){
+fjaque=fam[0];cjaque=cam[0];
+for(h=1;h<9;h++){
+fa[0]=fjaque+signcf[h];ca[0]=cjaque+signcc[h];
+kflagjg=0;
+while(kflagjg==0){
+jg=3;kflagjg=1;
+if(fa[0]==parseInt(yj[jg][kgu]/inth)){if(ca[0]==parseInt(xj[jg][kgu]/intw)){
+kj=kj+1;kjw=kj;jgmov[kj]=jg;intymov[kj]=fjaque*inth;intxmov[kj]=cjaque*intw;kflag=4;kflagjg=1;kcap[kj]=0;
+jgmovcap[kj]=0;if(kflagmov=1){kcap[kj]=1;jgmovcap[kj]=jgmovcontra;};
+};};	
+}; /* fin while(kflagjg */
+}; /* fin for(h */
+}; /* fin if(kflagmov<2 */
+}; /* fin for(hm */
+}; /* fin de movjaque */
+
+validar = function(xx,yy,intx,inty)
+{
+kflagk=1;kflagc=0;fila=Math.abs(yy/inth);cola=Math.abs(xx/intw);filw=Math.abs(inty/inth);colw=Math.abs(intx/intw);
+difil=Math.abs(fila-filw);dicol=Math.abs(cola-colw);
+if(jg==1){if(difil==0){signf=0;signc=(intx-xx)/(Math.abs(intx-xx));kflagk=0;};};
+if(jg==1){if(dicol==0){signc=0;signf=(inty-yy)/(Math.abs(inty-yy));kflagk=0;};};
+if(jg==2){if(difil==0){signf=0;signc=(intx-xx)/(Math.abs(intx-xx));kflagk=0;};};
+if(jg==2){if(dicol==0){signc=0;signf=(inty-yy)/(Math.abs(inty-yy));kflagk=0;};};
+if(jg==3){if(difil==dicol){kflagk=0;signf=(inty-yy)/(Math.abs(inty-yy));signc=(intx-xx)/(Math.abs(intx-xx));};};
+if(jg==4){if(difil==dicol){kflagk=0;signf=(inty-yy)/(Math.abs(inty-yy));signc=(intx-xx)/(Math.abs(intx-xx));};};
+if(jg==5){if(difil==2){if(dicol==1){kflagk=0;kflagc=1;};};};
+if(jg==5){if(dicol==2){if(difil==1){kflagk=0;kflagc=1;};};};
+if(jg==6){if(difil==2){if(dicol==1){kflagk=0;kflagc=1;};};};
+if(jg==6){if(dicol==2){if(difil==1){kflagk=0;kflagc=1;};};};
+};
+
+interceptar=function(kg,signf,signc,fjug,cjug,fyc,cxc,h){
+kflag=1;
+if(h%2==0){if(kflagT==1){kflag=0;};};if(h%2!=0){if(kflagA==1){kflag=0};};
+if(kflag==0){
+if(difini>1){difmax=difini;};if(dicini>1){difmax=dicini;};
+for(k=1;k<difmax;k++){
+	fh=fjug+signf[h]*k;ch=cjug+signc[h]*k;
+	cjg=parseInt(xj[0][0]/intw);fjg=parseInt(yj[0][0]/inth);
+	if(ch==cjg){if(fh==fjg){kflagk=1;};};			
+	for(kg=1;kg<3;kg++){
+	for(jg=1;jg<jgmax+1;jg++){
+	cjg=parseInt(xj[jg][kg]/intw);fjg=parseInt(yj[jg][kg]/inth);
+		if(cjg==ch){if(fjg==fh){kflagk=1;};};
+	};/*fin for(jg */			
+	};/*fin for(kg */
+};/*fin for(k=1 */
+};/*fin if(kflag==0 */
+};/*fin interceptar */
+
+dibujaRect=function(xr,yr)
+{
+ctx.beginPath(),(xr/intw)%2==0?(yr/inth)%2==0?ctx.fillStyle="lightblue":ctx.fillStyle="lightyellow":
+(yr/inth)%2==0?ctx.fillStyle="lightyellow":ctx.fillStyle="lightblue",ctx.fillRect(xr,yr,intw,inth);
+};
+
+dibujarLinea=function(strcolor,xc,yc)
+{ctx.lineWidth = 5;intxL=xc+10;intyL=yc+5;
+ctx.strokeStyle =strcolor;ctx.beginPath();ctx.moveTo(intxL,intyL);
+ctx.lineTo(intxL+25,intyL);ctx.lineTo(intxL+25,intyL+25);ctx.lineTo(intxL,intyL+25);
+ctx.lineTo(intxL,intyL);ctx.closePath();ctx.stroke(); 
+};
+
+hacerjug=function()
+{
+dibujarLinea(strcolor,xx,yy);dibujaRect(xx,yy);dibujaRect(intx,inty);
+jugadores(txtimg,intx,inty,intw,inth);xj[jgm][kguj]=intx;yj[jgm][kguj]=inty;
+if(kflagcap>0){yj[jgcap][3-kguj]=8*inth;xj[jgcap][3-kguj]=0;};
+}; /* fin hacerjug */
+
+hacerjugHvsH=function()
+{
+dibujaRect(xx,yy);dibujaRect(intx,inty);
+jugadores(txtimg,intx,inty,intw,inth);xj[jgm][kguj]=intx;yj[jgm][kguj]=inty;
+if(kflagcap>0){yj[jgcap][3-kguj]=8*inth;xj[jgcap][3-kguj]=0;};
+}; /* fin hacerjug */
+
+var k,kw,xjugp,yjugp,xk,yk,xjugc,yjugc;var strcolor="yellow";
+var jgma,jg,kflag,kflagk,fjug,cjug,fyc,cxc,kont,fen,cen,difini,dicini,kflagT,kflagA,kontclic,ktime,ktimew,ki;
+jgmax=3;kontjg=1;kflag=0;h=0;kontclic=0;kflagclic=0;kgana=0;puntos=0;ktime=10000;ki=ktime;kflagfinfin=0;
+
+alerta=function(){
+if(kontclic==0){
+if(ki<11*ktime){setTimeout(alerta,ktime);ki=ki+ktime;};
+};
+};/*fin alerta*/
+
+if(ki==ktime){setTimeout(alerta,ktime);};
+
+buscarcapturaTA=function(){
+/* llega kflagcap=0 hTA=0 para T ... hTA=1 para A, y .. (fp cp) de pieza que se mueve */
+for(jgd=1;jgd<7;jgd++){
+fam[jgd]=parseInt(yj[jgd][3-kguj]/inth);cam[jgd]=parseInt(xj[jgd][3-kguj]/intw);
+if(kflagcap==0){
+for(k=1;k<5;k++){
+hTA=hTA+2;
+fpm=fp+signf[hTA];cpm=cp+signc[hTA];
+if(fpm==fam[jgd]){if(cpm==cam[jgd]){kflagcap=1;};};
+};/* fin de for(k */
+};/* fin de if(kflagcap==0 */
+};/* fin de for(jgd */
+};/* fin buscarcapturaT */
+
+/* QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ */
+
+ajustarpuntos=function(){
+/* inician instrucciones */
+kfinfin=0;
+for(k=0;k<9;k++){kfin[k]=0;};
+alert("inicia busqueda de jaque del contrario");  
+kgu=3-kguj;kflaginter=0;fjaque=fbalon;cjaque=cbalon;kont=0;kontw=0;kw=0;
+kguQ=kgu;
+jaque();kwinter=kw;
+if(kont>1){alert("jaqueMate");
+kfinfin=1;kgana=kguj;};
+
+if(kont==1){
+/* ???????????????????? */
+alert("jugadas de captura a pieza contraria que da jaque:"); 
+kgu=kguj;kguQ=kgu;
+ug=jgdajaque;fjaque=parseInt(yj[ug][3-kgu]/inth);cjaque=parseInt(xj[ug][3-kgu]/intw);
+kont=0;kontw=0;captura();kontcap=kontw;
+if(kontw>0){
+alert("se captura pieza contraria que da jaque");
+for(ku=1;ku<kontw+1;ku++){
+xxjug[ku]=xxjaque[ku];yyjug[ku]=yyjaque[ku];intxjug[ku]=intxjaque[ku];intyjug[ku]=intyjaque[ku];};
+};/*fin if(kontw>0 */
+
+alert("jugadas de interceptacion a pieza contraria que da jaque:");
+/* ppppppppppppppp */
+kgu=kguj;kontw=0;
+
+alert("si kwinter>1 hay casillas libres para interceptacion .. kwinter=");alert(kwinter);
+
+if(kwinter>1){
+for(ku=1;ku<kwinter;ku++){
+fjaque=fu[1][ku];cjaque=cu[1][ku];
+/* fu y cu [1] porque solo hay un jaque de pieza contraria */
+/* fu y cu son casillas libres entre balon y pieza */
+kont=0;kontw=0;kguQ=kguj;jaque();
+alert("interceptan ... kontw=");alert(kontw);
+if(kontw>0){
+for(kuk=1;kuk<kontw+1;kuk++){kontot=kontcap+kuk;
+/*xxjug[kontot]=intxjaque[kuk];yyjug[kontot]=intyjaque[kuk];intxjug[kontot]=cjaque*intw;intyjug[kontot]=fjaque*inth;*/
+};/* fin for(kuk */
+};/* fin if(kontw */
+};/* fin for(ku */
+};/* fin if(kwinter>1 */
+
+if(kontcap==0){if(kontw==0){kfin[0]=1;kfinfin=1;};};
+if(kfin[0]==0){
+njugadas=kontcap+kontw;
+
+alert("njugadas = ");alert(njugadas);
+
+/* ppppppppppppp */
+
+/* se tienen todas las jugadas posibles */
+kazar=Math.ceil(Math.random()*njugadas);kazar=1; 
+intx=intxjug[kazar];inty=intyjug[kazar];ptosajuste=0;
+if((xx==xxp)&&(yy==yyp)){if((intx==intxp)&&(inty==intyp)){ptosajuste=0.8;alert("ptosajuste");};};
+/*hacerjug*/
+};/*fin if(kfin[0]==0 */
+/* ????????????????????? */
+} /* fin if(kont==1 */
+
+
+
+else{
+alert("no hay jaque del contrario"); 
+
+if(kfin[1]==0){
+fjaquem=fbalon;cjaquem=cbalon;kontw=0;kjw=0;kgu=kguj;
+alert("buscar si hay jugada propia de posible jaque");
+movjaque();
+kjwkguj=kjw;
+if(kjw==0){
+alert("no hay posible jaque");
+kjwkguj=0;};
+kflagmate=0;
+
+/* ggggggggggggggggg */
+if(kjwkguj>0){
+alert("hay posible jaque");
+/* EEEEEEEEEEEE */
+for(ku=1;ku<kjw+1;ku++){kgu=kguj;
+jugada[ku]=jgmov[ku];intxkguj[ku]=intxmov[ku];intykguj[ku]=intymov[ku];kcapkguj[ku]=kcap[ku];jgcapm[ku]=jgmovcap[ku];
+krw=kmw[ku];if(krw>0){for(kr=1;kr<krw+1;kr++){fintermov[ku][kr]=fm[ku][kr];cintermov[ku][kr]=cm[ku][kr];};};
+/* casillas libres para interceptacion del contrario */
+alert("buscar si al jugar y dar jaque, hay ademas jaque descubierto");
+jgu=jgmov[ku];fjaquedes=parseInt(yj[jgu][kgu]/inth);cjaquedes=parseInt(xj[jgu][kgu]/intw);
+jaquedes();
+kcontra[ku]=0;
+if(kflag==1){if(kflagdes>2){kcontra[ku]=1;};};
+/* alert("jugada de muerte"); */
+if(kflag==4){kflagmate=1;kjmate=ku;};
+if(kflagmate==1){
+/*alert("jaque doble ..jugar!!");*/
+jg=jgjaque[kjmate];kg=kgu;xx=xj[jg][kg];yy=yj[jg][kg];kfinfin=1;
+intx=cjaque*intw;inty=fjaque*inth;
+/*hacerjug*/
+kfin[2]=1;brake;};
+};/* fin de for(ku=1 */
+/* EEEEEEEEEEE */
+if(kfin[2]==0){
+/*alert("no hay doble jaque"); */
+for(ku=1;ku<kjwkguj+1;ku++){kgu=kguj;
+if(kfin[3]==0){
+if(kcontra[ku]==0){ /* se excluyen jugadas de muerte */
+fjaque=parseInt(intykguj[ku]/inth);cjaque=parseInt(intxkguj[ku]/intw);
+kgu=3-kguj;kont=0;kontw=0;jaque();
+if(kontw==0){kjaquenocap[ku]=1;
+/*alert("jaque sin captura");*/
+if(kmw[ku]==0){
+jgm=jugada[ku];xx=xj[jgm][kguj];yy=yj[jgm][kguj];
+intx=intxkguj[ku];inty=intykguj[ku];
+/*hacerjug*/
+kfin[3]=1;kfinfin=1;
+};/* fin if(kmw[ */
+};/* fin if(kontw */ 
+};/* fin if(kcontra */
+};/* fin if(kfin3 */
+};/* fin de for(ku=1 */
+};/* fin de if(kfin2 */
+if(kfin[3]==0){
+/*alert("no jay jaque sin captura");*/
+/*alert("se chequea interceptacion para cada pieza que da jaque"); */
+kjmate=0;kflagmate=0;
+/* fffffffffffffffffff */
+if(kjwkguj>1){kflagintercontra=0;
+for(ku=1;ku<kjwkguj;ku++){
+kgu=kguj;
+if(kmw[ku]>0){
+for(km=1;km<kmw[ku];km++){
+if(kfin[7]==0){
+fjaque=fm[ku][km];cjaque=cm[ku][km];
+kont=0;kontw=0;jaque();
+if(kontw>0){kflagintercontra=1;
+if(kjaquenocap[ku]==1){jgm=jugada[ku];xx=xj[jgm][kguj];yy=yj[jgm][kguj];
+intx=intxkguj[ku];inty=intykguj[ku];
+/*hacerjug*/
+kfin[7]=1;kfinfin=1;
+};/* fin if(kjaquenocap */
+};/* fin if(kontw */
+};/* fin de if(kfin7 */
+};/* fin for(km */ 
+};/* fin if(kmw[ku] */
+if(kflagintercontra==1){
+/*alert("contrario intercepta");*/
+};
+};/* fin for(ku=1 */
+}; /* fin de if(kjwkguj>1 */
+/* fffffffffffffffffff */
+};/* fin de if(kfin3 */
+};/* fin de if(kjwkguj>0 */
+/* ggggggggggggggggggggggggg */
+alert("despues de gggg");
+if(kfin[2]==0){
+if(kfin[3]==0){
+/*alert("no hay posible jaque propio ni jaquemate");*/
+alert("se valida amenza de contrario de jaquemate"); 
+fjaquem=fbalon;cjaquem=cbalon;kjw=0;
+kgu=3-kguj;movjaque();kontw=0;
+
+/*  pppppppp */
+if(kjw>0){
+for(ku=1;ku<kjw+1;ku++){jg=jgmov[ku];
+if(kontw==0){
+fjaquedes=parseInt(yj[jg][kgu]/inth);cjaquedes=parseInt(xj[jg][kgu]/intw);
+jaquedes();jgm=0;
+if(kflag==1){
+/*alert("jaque descubierto de pieza propia .. se suicida");*/
+};
+if(kflag==4){jgm=jgjaquedes[kflagdes];};
+/* ***** */
+/*alert("jaque descubierto..jgm =");alert(jgm);*/
+if(jgm>0){
+if(kflag==4){
+fjaque=parseInt(yj[jgm][kgu]/inth);cjaque=parseInt(xj[jgm][kgu]/intw); 
+/*alert("pieza que da jaque descubierto");*/ 
+kgu=kguj;kont=0;kontw=0;captura();
+/* sssssssssss */
+if(kontw>0){
+alert("capturar pieza que amenaza con jaque descubierto, para evitar jaquemate"); 
+jg=jgjaque[1];kg=kgu;xx=xj[jg][kg];yy=yj[jg][kg];
+intx=cjaque*intw;inty=fjaque*inth;kfin[4]=1;
+/*hacerjug*/
+if(jgm>0){yj[jgm][3-kg]=8*inth;xj[jgm][3-kg]=0;};
+alert("se captura jgdajaque jgm"); 
+}; /* fin if(kontw>0 */
+/* ssssssssssss */
+}; /* fin if(kflag==4 */
+}; /* fin if(jgm>0 */
+/* ***** */
+}; /* fin if(kontw==0 */
+}; /* fin de for(ku=1 */
+}; /* fin if(kjw>0 */
+/* ppppppppppp */					
+if(kfin[4]==0){
+alert("finalmente ...kjwkguj=");alert(kjwkguj);
+/* wwwwwwwwwwwwwwwwwwww */
+if(kjwkguj>0){
+for(kj=1;kj<kjwkguj+1;kj++){
+/* alert("jg intx inty kcap");jg=jugada[kj];intx=intxkguj[kj];inty=intykguj[kj];alert(jg);alert(parseInt(intx/intw));alert(parseInt(inty/inth)); */
+/* alert("kj kcap");alert(kj);alert(kcapkguj[kj]); */
+};
+/* jjjjjjjjjjj */
+kflagkcap=0;
+for(kj=1;kj<kjwkguj+1;kj++){
+if(kflagkcap==0){
+if(kcapkguj[kj]==1){kflagkcap=1;jgcap=jgcapm[kj];
+jgm=jugada[kj];kg=kguj;xx=xj[jgm][kg];yy=yj[jgm][kg];intx=intxkguj[kj];inty=intykguj[kj];
+/*hacejug*/
+kfin[5]=1;};
+}; /* fin if(kflagkcap==0 */
+}; /* fin for(kj */
+/* jjjjjjjjjj */
+if(kfin[5]==0){
+if(kflagkcap==0){
+kflag=0;
+alert("se da jaque sin capturar pieza contraria");
+for(kj=1;kj<kjwkguj+1;kj++){
+if(kflag==0){
+jgm=jugada[kj];kg=kguj;xx=xj[jgm][kg];yy=yj[jgm][kg];intx=intxkguj[kj];inty=intykguj[kj];
+/*hacerjug*/
+}; /* fin if(kflag==0 */
+}; /* fin for(kj */
+}; /* fin if(kflagkcap */
+};/* fin if(kfin5 */
+}; /* fin de if(kjwkguj>0 */
+/* wwwwwwwwwwwwwwwwwwww */
+alert("no hay pieza propia que pueda dar jaque");
+
+};/* fin if(kfin4 */
+};/* fin if(kfin3 */
+};/* fin if(kfin2 */
+};/* fin if kfin1 */
+}; /* fin else{ /*
+/* eeeeeeeeeeeeeee */
+
+if(kfinfin==1){
+/*
+alert("sigue al final kfinfin=1");alert("kdebeganar kgana kjuega kantot");alert(kdebeganar);
+alert(kgana);alert(kjuega);alert(kantot);
+*/
+};
+alert("finQ.onclick");
+}; /* fin Q.onclick */
+/* QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ */
+
+/* inicia t.onclick sobre el tablero */
+t.onclick=function(e){
+cell=t.getBoundingClientRect();xc=e.clientX-cell.left;yc=e.clientY-cell.top;
+cxc=parseInt(xc/intw);fyc=parseInt(yc/inth);kflagb=0;
+if(cbalon==cxc){if(fbalon==fyc){kflagb=1;};};
+if(kflagfinfin==0){
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+if(kflagb==0){
+if(kflagclic==3){kontjg=3;kflagclic=0;};
+if(kontjg==3){kontjg=1;};
+if(kontjg==2){kflag=0;};
+
+/* k1k1k1k1k1k1k1k1k1k1k1k1k1k1k1k1k11k1 */
+if(kontjg==1){
+if(kflag==0){
+kflagT=0;kflagA=0;kflagC=0;
+for(kg=1;kg<3;kg++){
+for(jg=1;jg<jgmax+1;jg++){
+cjg=parseInt(xj[jg][kg]/intw);fjg=parseInt(yj[jg][kg]/inth);
+if(fyc==fjg){if(cxc==cjg){if(kg==kguj){cjug=cjg;fjug=fjg;kontjg=2;kflag=2;txtimg=idj[jg+(kg-1)*4];jgm=jg;
+dibujarLinea(strcolor,cxc*intw,fyc*inth);
+};};};/*fin if(fyc */
+};/*fin for(jg */
+};/*fin for(kg */ 
+};/*fin if(kflag==0 */
+};/*fin if(kontjg==1 */
+/*k1k1k1k1k1k1k1k1k1k1k1k1k1k1k1k1k1k1k1 */
+
+if(kontjg==2){
+/* k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2 */
+
+if(kflag==0){kflagcap=0;
+for(kg=1;kg<3;kg++){
+for(jg=1;jg<jgmax+1;jg++){
+cjg=parseInt(xj[jg][kg]/intw);fjg=parseInt(yj[jg][kg]/inth);
+if(fyc==fjg){if(cxc==cjg){if(kg==kguj){kflag=1;};};};
+if(fyc==fjg){if(cxc==cjg){if(kg==3-kguj){kflag=0;kflagcap=1;jgcap=jg;};};};
+};/*fin for(jg */
+};/*fin for(kg */
+};/*fin if(kflag==0 */
+
+/* kfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkffk */
+if(kflag==0){
+kflagT=0;kflagA=0;kflagC=0;
+
+if(jgm<jgmax){
+difini=Math.abs(fyc-fjug);dicini=Math.abs(cxc-cjug);
+if(difini==0){if(dicini>0){kflagT=1;};};if(dicini==0){if(difini>0){kflagT=1;};};
+if(difini==dicini){if(dicini>0){kflagA=1;};};
+difini=fyc-fjug;dicini=cxc-cjug;
+
+if(kflagT==1){if(difini==0){h=4;if(dicini>0){h=8;};};if(dicini==0){h=6;if(difini>0){h=2;};};};
+
+if(kflagA==1){
+if(difini>0){if(dicini>0){h=1;};};if(difini>0){if(dicini<0){h=3;};};
+if(difini<0){if(dicini>0){h=7;};};if(difini<0){if(dicini<0){h=5;};};
+};/*fin if(kflagA */
+
+if(jgm==1){if(kflagA==1){kflag=1;};};if(jgm==2){if(kflagT==1){kflag=1;};};
+if(kflag==0){interceptar(kg,signf,signc,fjug,cjug,fyc,cxc,h);};
+};/*fin if(jgm */
+
+/* cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc */
+if(jgm==3){
+kflagk=0;
+for(h=1;h<9;h++){kflag=0;
+if(kflagk==0){
+fh=fjug+signcf[h];ch=cjug+signcc[h];
+if(fh>7){kflag=1;};if(ch>7){kflag=1;};if(fh<0){kflag=1;};if(ch<0){kflag=1;};
+/* oooooooooooooooooooooo */
+if(kflag==0){
+if(fh==fyc){if(ch==cxc){kflagC=1;kflagk=1;
+cjg=parseInt(xj[0][0]/intw);fjg=parseInt(yj[0][0]/inth);if(fh==fjg){if(ch==cjg){kflagC=0;kflag=1;};};	
+
+for(kg=1;kg<3;kg++){for(jg=1;jg<3;jg++){
+if(kflag==0){
+cjg=parseInt(xj[jg][kg]/intw);fjg=parseInt(yj[jg][kg]/inth);
+if(fjg==fh){if(cjg==ch){if(kg==kguj){kflagC=0;};};};
+if(fjg==fh){if(cjg==ch){if(kg==3-kguj){if(kflagC==1){kflagcap=1;jgcap=jg;};};};};
+if(kflagC==1){kflagk=1;kflag=0;};
+};/*fin if(kflag==0 */
+};/*fin for(jg */
+};/*fin for(kg */
+};
+};
+};/*fin if(kflag==0 */
+/* ooooooooooooooooooooooo */
+};/*fin if(kflagk */
+};/*fin for(h */
+};/*fin if(jgm==3 */
+/* cbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbccbcbc */
+};/*fin if(kflag==0 */
+/* kfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkf */
+if(kflagT==0){if(kflagA==0){if(kflagC==0){kflag=1;};};};
+/* kgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkggkgkgkg */
+if(kflag==0){
+xx=cjug*intw;yy=fjug*inth;intx=cxc*intw;inty=fyc*inth;
+xxp=xx;yyp=yy;intxp=intx;intyp=inty;
+
+/*ajustarpuntos();*/
+/*alert("regresa ..jgm txtimg ");alert(jgm);alert(txtimg);*/
+
+xx=xxp;yy=yyp;intx=intxp;inty=intyp;
+hacerjugHvsH();kontjg=3;kgu=3-kgu;kguj=kgu;
+if(kgu==2){document.getElementById("jugar").value="Juegan negras";}else{document.getElementById("jugar").value="Juegan blancas";};
+kflagclic=3;kfinfin=0;
+if(kontclic==0){document.getElementById("puntos").value="Puntos";document.getElementById("tiempo").value=parseInt(ki/1000);
+ktimew=parseInt(0.5+Math.sqrt(ki/ktime));};
+kontclic=kontclic+1;
+if(kontclic<7){
+if(cini[kontclic]==parseInt(xx/intw)){if(cend[kontclic]==parseInt(intx/intw)){if(fini[kontclic]==parseInt(yy/inth)){if(fend[kontclic]==parseInt(inty/inth)){
+puntos=puntos+ptos[kontclic]/(ksumaptos);}else{puntos=puntos+ptosajuste;};
+};};};
+document.getElementById("puntos").value=parseInt(puntos*1000);
+};/*fin if(kontclic<7 */
+
+/*inicia busqueda de jaque propio*/  
+kflaginter=0;fjaque=fbalon;cjaque=cbalon;kont=0;kontw=0;kw=0;fj=8;cj=7;fuj=8;cuj=7;kguQ=kguj;
+jaque();
+if(kont>0){kfinfin=1;kgana=kguj;faj=parseInt(yj[jgdajaque][kguQ]/inth);caj=parseInt(xj[jgdajaque][kguQ]/intw);};
+
+if(kfinfin==0){
+/*inicia busqueda de jaque contrario */ 
+kflaginter=0;fjaque=fbalon;cjaque=cbalon;kont=0;kontw=0;kw=0;fj=8;cj=7;fuj=8;cuj=7;kguQ=3-kguj;
+jaque();kwinter=kmw[1];
+if(kont>0){kfinfin=1;kgana=3-kguj;
+faj=parseInt(yj[jgdajaque][3-kguj]/inth);caj=parseInt(xj[jgdajaque][3-kguj]/intw);
+};
+
+if(kont==1){
+/* hay jaque y falta si captura o interceptacion */
+/* ???????????????????? */
+/*jugadas de captura a pieza contraria que da jaque*/
+ug=jgdajaque;fjaque=parseInt(yj[ug][3-kguj]/inth);cjaque=parseInt(xj[ug][3-kguj]/intw);
+kont=0;kontw=0;kguQ=kguj;captura();kontcap=kontw;
+if(kontw>0){kgana=0;kfinfin=0;};
+
+if(kfinfin==1){
+/*jugadas de interceptacion a pieza contraria que da jaque */ 
+/* ppppppppppppppp */
+kontw=0;
+/* si kwinter>1 hay casillas libres para interceptacion */
+if(kwinter>1){
+for(ku=1;ku<kwinter;ku++){
+fjaque=fu[1][ku];cjaque=cu[1][ku];
+/* fu y cu [1] porque solo hay un jaque de pieza contraria */
+/* fu y cu son casillas libres entre balon y pieza */
+kont=0;kontw=0;fj=8;cj=7;fuj=8;cuj=7;kgu=kguj;kguQ=kguj;jaque();
+if(kontw>0){kgana=0;kfinfin=0;};
+};/* fin for(ku */
+};/* fin if(kwinter>1 */
+};/*fin if(kfinfin==1 */
+
+};/*fin if(kont==1 */
+};/*fin de if(kfinfin==0 */
+
+if(kfinfin==0){
+faj=0;caj=0;
+for(kg=1;kg<3;kg++){kflagempate[kg]=0;njg[kg]=0;
+for(jg=1;jg<jgmax+1;jg++){
+kflagm[jg][kg]=0;if(yj[jg][kg]<8*inth){kflagm[jg][kg]=jg;njg[kg]=njg[kg]+1;
+fam[kg]=parseInt(yj[jg][kg]/inth);cam[kg]=parseInt(xj[jg][kg]/intw);kflagempate[kg]=jg;};
+};/*fin for(jg */
+};/*fin for(kg */
+
+if(kflagempate[1]==0){
+for(jg=1;jg<jgmax+1;jg++){
+if(kflagm[jg][2]!=0){kgana=3;if(kflagm[jg][2]!=2){kgana=2;faj=fam[2];caj=cam[2];};};
+};};
+
+if(kflagempate[2]==0){
+for(jg=1;jg<jgmax+1;jg++){
+if(kflagm[jg][1]!=0){kgana=3;if(kflagm[jg][1]!=2){kgana=1;faj=fam[1];caj=cam[1];};};
+};};
+
+if((njg[1]>1)||(njg[2]>1)){}else{
+if((kflagempate[1]==2)&&(kflagempate[2]==2)){kgana=3;faj=fam[kguj];caj=cam[kguj];};
+};
+
+if(kgana==3){
+if(kflagempate[1]==0){
+	faj=fam[2];caj=cam[2];
+	if((fbalon%2==0)&&(cbalon%2==0)){if((fam[2]%2==0)&&(cam[2]%2==0)){kgana=2;};};
+	if((fbalon%2==0)&&(cbalon%2!=0)){if((fam[2]%2==0)&&(cam[2]%2!=0)){kgana=2;};};
+	if((fbalon%2!=0)&&(cbalon%2==0)){if((fam[2]%2==0)&&(cam[2]%2==0)){kgana=2;};};
+	if((fbalon%2!=0)&&(cbalon%2!=0)){if((fam[2]%2==0)&&(cam[2]%2!=0)){kgana=2;};};
+};/*fin if(kflagempate[1] */
+
+if(kflagempate[2]==0){
+	faj=fam[1];caj=cam[1];
+	if((fbalon%2==0)&&(cbalon%2==0)){if((fam[1]%2==0)&&(cam[1]%2==0)){kgana=1;};};
+	if((fbalon%2==0)&&(cbalon%2!=0)){if((fam[1]%2==0)&&(cam[1]%2!=0)){kgana=1;};};
+	if((fbalon%2!=0)&&(cbalon%2==0)){if((fam[1]%2==0)&&(cam[1]%2==0)){kgana=1;};};
+	if((fbalon%2!=0)&&(cbalon%2!=0)){if((fam[1]%2==0)&&(cam[1]%2!=0)){kgana=1;};};
+};/*fin if(kflagempate[1] */
+
+};/*fin if(kgana */
+/* fin busqueda de empate */
+};/*fin de if(kfinfin==0 */
+
+if(kgana>0){strcolor="red";dibujarLinea(strcolor,caj*intw,faj*inth);puntos=parseInt(puntos*1000/ktimew);kflagfinfin=1;
+	if(kgana==kdebeganar){puntos=parseInt(puntos*kdificultad/1000);document.getElementById("tiempo").value="Nivel Medio";}
+	if(kgana!=kdebeganar){puntos=parseInt(puntos*kdificultad/2000);document.getElementById("tiempo").value="Nivel bajo";}
+	document.getElementById("puntos").value=puntos;
+	if(kgana==kdebeganar){document.getElementById("jugar").value="Bien";}else{document.getElementById("jugar").value="   ??";};
+	if(puntos>kdificultad/2){document.getElementById("tiempo").value="Nivel alto";};
+};/*fin if(kgana>0 */
+
+
+};/*fin if(kflag==0 */
+/* kgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkggkgkgkg */
+
+};/*fin if(kontjg==2 */
+/* k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2k2 */
+};/* fin if(kflagfinfin==0*/
+}; /* fin if(kflagb==0 */
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+}; /* fin clic */
+}; /* .......  fin de windows.onload .... */
+
+
+
+
+
+</script>
+
+	</head>
+	<body class="boxed">
+
+	<!-- Loader -->
+	<div class="fh5co-loader"></div>
+
+	<div id="wrap">
+
+	<div id="fh5co-page">
+		<header id="fh5co-header" role="banner">
+			<div class="container">
+				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+				<div id="fh5co-logo"><a href="index.html"></a></div>
+				<nav id="fh5co-main-nav" role="navigation">
+					<ul>
+					    <li class="cta"><a href="#jugar">Jugar</a></li>
+						<li class="cta"><a href="contact.html">Contacto</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- Header -->
+		<div class="fh5co-slider">
+			<div class="container">
+				<div>
+				  <center>
+<iframe src="https://player.vimeo.com/video/182888069" id="video" width="800" height="400" frameborder="1" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</center>
+				</div>
+			</div>
+		</div>
+		<!-- Slider -->
+		
+		<div id="fh5co-intro" class="fh5co-section">
+			<div class="container">
+				<div class="row row-bottom-padded-md">
+					<div class="col-md-8 col-md-offset-2 text-center ts-intro">
+						<h1>Descarga la App</h1>
+						<p class="fh5co-lead">Disponible para: Android - Windows 10 - IOS</p>
+					</div>
+				</div>
+				<div class="row row-bottom-padded-sm">
+					<div class="col-md-4">
+						<div class="fh5co-service text-center">
+							<a href="img/ChessMakeIt.apk"><img src="img/android.png" width="100" height="100"/></a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="fh5co-service text-center">
+							<a href="img/ChessMakeIt.appx"><img src="img/windows10.jpg"  width="100" height="100"/></a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="fh5co-service text-center">
+							<a href="img/ChessMakeIt.appx"><img src="img/ios.jpg"  width="100" height="100"/></a>
+						</div>
+					</div>
+				</div>
+				<center><div class="row row-bottom-padded-sm" id="jugar">
+				<div class="col-md-12">
+						<img width=20px id="imgj11" src="img/j11.png" alt="..."> <img width=20px id="imgj13" src="img/j13.png" alt="..."> <img width=20px id="imgj15" src="img/j15.png" alt="...">  
+<img width=20px id="imgj21" src="img/j21.png" alt="..."> <img width=20px id="imgj23" src="img/j23.png" alt="..."> <img width=20px id="imgj25" src="img/j25.png" alt="...">
+<img width=10px id="balon" src="img/balon.png" alt="..."><br /> <br />
+<button type="button" class="btn btn-primary" id="jugar">Juegan Blancas</button>
+<font color ="blue">..</font> <font color ="black"></font>&nbsp;&nbsp;
+<button type="button" class="btn btn-primary" id="tiempo">S</button><br />
+<button type="button" class="btn btn-primary" id="Nuevo" onclick="diagrama()">Nuevo Diagrama</button>
+<button type="button" class="btn btn-primary" id="repetir" onclick="repetir()">Repetir</button>
+<font color ="blue">..</font> <font color ="black">Puntos ---></font> 
+<input type="button" id="puntos"  value = "Puntos" style="color:red;background-color:white;" readonly><br /> <br />
+					</div>
+					<div class="col-md-12">
+						<canvas id="canvas" width="384" height="480"></canvas>
+					</div>					
+				</div></center>
+		
+			</div>
+		</div>
+
+		<footer id="fh5co-footer" role="contentinfo">
+			<div class="container">
+				<div class="row row-bottom-padded-sm">
+					<div class="col-md-4 col-sm-12">
+						<div class="fh5co-footer-widget">
+							<h3>La mejor forma de iniciarce en el ajedrez</h3>
+							<p>Los juegos como el Ajedrez y el FutbolAjedrez, desarrollan además la capacidad de concentración y el pensamiento lógico-matemático, entre otros.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-md-push-1 col-sm-12 col-sm-push-0">
+						<div class="fh5co-footer-widget">
+							<h3>ChessMakeIt UNA MANERA DIVERTIDA DE PENSAR.</h3>
+							<ul class="fh5co-footer-link">
+								Ante el cumulo de Información y de conocimientos disponibles a través de Internet, es indispensable desarrollar el sentido critico capaz de analizar la información disponible y evaluar los efectos de nuestras decisiones.
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-md-push-2 col-sm-12 col-sm-push-0">
+						
+						<div class="fh5co-footer-widget">
+							<h3>Contacto</h3>
+							<ul class="fh5co-social">
+								<li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
+								<li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
+								<li class="linkedin"><a href="#"><i class="icon-linkedin"></i></a></li>
+								<li class="message"><a href="#"><i class="icon-mail"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="fh5co-copyright">
+							<p class="pull-left">&copy; ChessMakeIt </p>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-chevron-down"></i></a>
+	</div>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+
