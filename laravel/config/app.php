@@ -164,7 +164,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Ably\Laravel\AblyServiceProvider::class,
         RenatoMarinho\LaravelPageSpeed\ServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
+        //Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
