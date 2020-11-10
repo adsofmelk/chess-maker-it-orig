@@ -77,11 +77,11 @@ trait ChessTrait
             $piecesMap[] = $row.$col;
         }
         
-        return [
-            'pieces' => $pieces,
-            'piecesMap' => $piecesMap,
-            'piecesNames' => $namePieces,
-        ];
+        return compact([
+            'pieces',
+            'piecesMap',
+            'piecesNames',
+        ]);
     }
     
     /**
@@ -113,65 +113,65 @@ trait ChessTrait
         // console.log('location difference', rowResult, yf);
         switch ($type) {
             case 1:
-                {
-                    // tower
-                    if (($rowResult == 0 || $colResult == 0) && $rowResult != $colResult) {
-                        $ejePoints = [$colInit, $colEnd];
-                        $ejeFijo = $rowInit;
-                        $moveRow = true;
-                        
-                        if ($rowResult > $colResult) {
-                            $ejePoints = [$rowInit, $rowEnd];
-                            $ejeFijo = $colInit;
-                            $moveRow = false;
-                        }
-                        
-                        $points = $this->calcPoints(intval($ejePoints[0]), intval($ejePoints[1]));
-                        
-                        if ($moveRow) {
-                            foreach ($points as $point) {
-                                if (array_search(strval($ejeFijo).strval($point), $args['piecesMap']) !== false) {
-                                    return false;
-                                }
-                            }
-                            
-                            return true;
-                        }
-                        
+            {
+                // tower
+                if (($rowResult == 0 || $colResult == 0) && $rowResult != $colResult) {
+                    $ejePoints = [$colInit, $colEnd];
+                    $ejeFijo = $rowInit;
+                    $moveRow = true;
+                    
+                    if ($rowResult > $colResult) {
+                        $ejePoints = [$rowInit, $rowEnd];
+                        $ejeFijo = $colInit;
+                        $moveRow = false;
+                    }
+                    
+                    $points = $this->calcPoints(intval($ejePoints[0]), intval($ejePoints[1]));
+                    
+                    if ($moveRow) {
                         foreach ($points as $point) {
-                            if (array_search(strval($point).strval($ejeFijo), $args['piecesMap']) !== false) {
+                            if (array_search(strval($ejeFijo).strval($point), $args['piecesMap']) !== false) {
                                 return false;
                             }
                         }
                         
                         return true;
                     }
+                    
+                    foreach ($points as $point) {
+                        if (array_search(strval($point).strval($ejeFijo), $args['piecesMap']) !== false) {
+                            return false;
+                        }
+                    }
+                    
+                    return true;
                 }
+            }
             
             case 2:
-                {
-                    // alfil
-                    if ($rowResult == $colResult) {
-                        $rows = $this->calcPoints(intval($rowInit), intval($rowEnd));
-                        $cols = $this->calcPoints(intval($colInit), intval($colEnd));
-                        
-                        foreach ($rows as $key => $row) {
-                            if (array_search(strval($row).strval($cols[$key]), $args['piecesMap']) !== false) {
-                                return false;
-                            }
+            {
+                // alfil
+                if ($rowResult == $colResult) {
+                    $rows = $this->calcPoints(intval($rowInit), intval($rowEnd));
+                    $cols = $this->calcPoints(intval($colInit), intval($colEnd));
+                    
+                    foreach ($rows as $key => $row) {
+                        if (array_search(strval($row).strval($cols[$key]), $args['piecesMap']) !== false) {
+                            return false;
                         }
-                        
-                        return true;
                     }
+                    
+                    return true;
                 }
+            }
             
             case 3:
-                {
-                    // horse
-                    if (($rowResult + $colResult) == 3 && $rowResult > 0 && $colResult > 0) {
-                        return true;
-                    }
+            {
+                // horse
+                if (($rowResult + $colResult) == 3 && $rowResult > 0 && $colResult > 0) {
+                    return true;
                 }
+            }
         }
         
         return false;
@@ -179,7 +179,10 @@ trait ChessTrait
     
     public function getDistribution($distribution = '')
     {
-        $distribution = Distros::select('distribution')->where('distribution', '<>', $distribution)->inRandomOrder()->first()->distribution;
+        $distribution = Distros::select('distribution')
+            ->where('distribution', '<>', $distribution)
+            ->inRandomOrder()
+            ->first()->distribution;
         
         return $distribution;
     }
@@ -213,51 +216,50 @@ trait ChessTrait
         
         switch ($type) {
             case 1:
-                {
-                    $rowResult = abs($rowInit - $rowEnd);
-                    $colResult = abs($colInit - $colEnd);
-                    
-                    $ejePoints = [$colInit, $colEnd];
-                    $ejeFijo = $rowInit;
-                    $moveRow = true;
-                    
-                    if ($rowResult > $colResult) {
-                        $ejePoints = [$rowInit, $rowEnd];
-                        $ejeFijo = $colInit;
-                        $moveRow = false;
-                    }
-                    
-                    $points = $this->calcPoints(intval($ejePoints[0]), intval($ejePoints[1]));
-                    
-                    if ($moveRow) {
-                        foreach ($points as $point) {
-                            $boxes[] = strval($ejeFijo).strval($point);
-                        }
-                    } else {
-                        foreach ($points as $point) {
-                            $boxes[] = strval($point).strval($ejeFijo);
-                        }
-                    }
-                    
-                    break;
+            {
+                $rowResult = abs($rowInit - $rowEnd);
+                $colResult = abs($colInit - $colEnd);
+                
+                $ejePoints = [$colInit, $colEnd];
+                $ejeFijo = $rowInit;
+                $moveRow = true;
+                
+                if ($rowResult > $colResult) {
+                    $ejePoints = [$rowInit, $rowEnd];
+                    $ejeFijo = $colInit;
+                    $moveRow = false;
                 }
+                
+                $points = $this->calcPoints(intval($ejePoints[0]), intval($ejePoints[1]));
+                
+                if ($moveRow) {
+                    foreach ($points as $point) {
+                        $boxes[] = strval($ejeFijo).strval($point);
+                    }
+                } else {
+                    foreach ($points as $point) {
+                        $boxes[] = strval($point).strval($ejeFijo);
+                    }
+                }
+                
+                break;
+            }
             
             case 2:
-                {
-                    $rows = $this->calcPoints(intval($rowInit), intval($rowEnd));
-                    $cols = $this->calcPoints(intval($colInit), intval($colEnd));
-                    
-                    foreach ($rows as $key => $row) {
-                        $boxes[] = strval($row).strval($cols[$key]);
-                    }
-                    
-                    break;
+            {
+                $rows = $this->calcPoints(intval($rowInit), intval($rowEnd));
+                $cols = $this->calcPoints(intval($colInit), intval($colEnd));
+                
+                foreach ($rows as $key => $row) {
+                    $boxes[] = strval($row).strval($cols[$key]);
                 }
+                
+                break;
+            }
         }
         
         return $boxes;
     }
-    
     
     public function shuffle_assoc($array)
     {

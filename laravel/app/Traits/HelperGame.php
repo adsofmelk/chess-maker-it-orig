@@ -713,5 +713,4 @@ trait HelperGame
             'line' => $resLine,
         ];
     }
-    
 }

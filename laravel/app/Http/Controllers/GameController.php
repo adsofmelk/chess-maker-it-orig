@@ -12,10 +12,7 @@ use App\Partidas as Game;
 use App\GamesTemp as PreGame;
 use App\SessionesAbly as AblySession;
 use Illuminate\Support\Str;
-use Session;
-use Ably;
-
-use Illuminate\Support\Facades\Log;
+use Ably\Laravel\Facades\Ably;
 
 use App\Traits\ChessTrait;
 use App\Traits\HelperGame;
@@ -276,7 +273,6 @@ class GameController extends Controller
             ]);
             
         }
-        
         
         $capturesNotDefende = [];
         $moreAttackSamePiece = '';
@@ -1331,29 +1327,8 @@ class GameController extends Controller
     
     public function playWithoutAuth(Request $request)
     {
-        //        dd($request);
-        
-        //        return response()->json([
-        //            $request->session()->getId(),
-        //        ]);
-        
         $distributionLast = '';
         $whoBegin = [-1, 0];
-        
-        /*if ($request->session()->has('pregameMachine')) {
-            // obtener la ultima parttida
-            $gameLast = Game::where('id', $request->session()->get('idgame'))->first();
-            
-            $distributionLast = $gameLast->distribution;
-            
-            if ($request->user()->id == $gameLast->who_begin) {
-                $whoBegin = [0, $request->user()->id];
-            }
-            
-            $request->session()->forget('pregameMachine');
-        } else {
-            shuffle($whoBegin);
-        }*/
         
         shuffle($whoBegin);
         

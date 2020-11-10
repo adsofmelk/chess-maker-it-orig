@@ -41,22 +41,22 @@
                 <ul>
                     @if (Route::has('login'))
                         <div class="top-right links">
-                            @auth
-                                <li>
-                                    <a class="cta" href="{{ route('home') }}">Sala Cultivarte Fundacion Bolivar Davivienda </a>
-                                </li>
-                                <li>
-                                    <a class="cta" href="{{ route('home') }}">Sala General
-                                    </a>
-                                </li>
-                            @else
-                                <li>
-                                    <a class="cta" href="{{ route('login') }}">Iniciar Sesión</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('register') }}">Registrarse</a>
-                                </li>
-                            @endauth
+                            <li>
+                                <a class="cta" href="{{ route('register') }}">Sala Cultivarte</a>
+                            </li>
+                            <li>
+                                <a class="cta" href="{{ route('register') }}">Sala General
+                                </a>
+                            </li>
+                            {{-- @auth--}}
+                            {{-- @else--}}
+                            {{--     <li>--}}
+                            {{--         <a class="cta" href="{{ route('login') }}">Iniciar Sesión</a>--}}
+                            {{--     </li>--}}
+                            {{--     <li>--}}
+                            {{--         <a href="{{ route('register') }}">Registrarse</a>--}}
+                            {{--     </li>--}}
+                            {{-- @endauth--}}
                         </div>
                     @endif
                 </ul>
