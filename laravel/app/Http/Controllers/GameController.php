@@ -1433,7 +1433,7 @@ class GameController extends Controller
         return view('errors.404');
     }
     
-    protected function distributionsWithoutAuth()
+    public function distributionsWithoutAuth()
     {
         return [
             0 => '28,37,23,19,30,5,27',

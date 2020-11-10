@@ -77,6 +77,8 @@ trait ChessTrait
             $piecesMap[] = $row.$col;
         }
         
+        $piecesNames = $namePieces;
+        
         return compact([
             'pieces',
             'piecesMap',
