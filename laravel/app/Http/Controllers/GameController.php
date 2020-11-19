@@ -1207,7 +1207,7 @@ class GameController extends Controller
         $diferenciaFavor = 0.5;
         $diferenciaContra = 0.5;
         
-        if ($diferencia > 4) {
+        if ($diferencia > 3) {
             $rango = Scores::where('value_min', '<=', $diferencia)->where('value_max', '>=', $diferencia)->first();
             $diferenciaFavor = $rango->favor / 100;
             $diferenciaContra = $rango->contra / 100;
@@ -1233,7 +1233,7 @@ class GameController extends Controller
         
         /**
          * R1 = R0 + K(W-P)
-         * K = 20 if R0 > 2000 K = 10
+         * K = 200 if R0 > 2000 K = 100
          *
          * R1 => new score
          */
